@@ -424,13 +424,97 @@ var (
 		},
 		8: {
 			Index: 8,
+			Wai:   BaGuaMap[Kan],
+			Nei:   BaGuaMap[Kun],
+			Name:  "水地比",
+			DuYin: "bǐ",
+			Text:  "《比》：吉。原筮，元，永贞，无咎。不宁方来，后夫凶。",
+			Short: "比卦，亲比，亲密的辅佐。冲为地，坎为水，地上有水。水得地而蓄而流，地得水而柔而润，水与地亲密无间。比者，辅也，密也。故比象征亲密比辅。彼此能亲密比辅自然吉祥，但应比辅于守持正固而有德的长者，择善而从。",
+			Desc:  "《彖》曰：比，吉也；比，辅也，下顺従也。“原筮，元永贞，无咎”，以刚中也。“不宁方来”，上下应也。“后夫凶”，其道穷也。\n　　《象》曰：地上有水，比。先王以建万国，亲诸侯。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六，有孚比之，无咎。有孚盈缶，终来有它，吉。",
+					ImageText: "《象》曰：比之初六，有它吉也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "六二，比之自内，贞吉。",
+					ImageText: "《象》曰：“比之自内”，不自失也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三，比之匪人。",
+					ImageText: "《象》曰：比之匪人”，不亦伤乎？斋",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四，外比之，贞吉。",
+					ImageText: "《象》曰：外比于贤，以従上也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五，显比，王用三驱，失前禽，邑人不诫，吉。",
+					ImageText: "《象》曰：“显比”之吉，位正中也。舍逆取顺，失前禽也。邑人不诫，上使中也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六，比之无首，凶。",
+					ImageText: "《象》曰：“比之无首”，无所终也。",
+				},
+			},
+		},
+		9: {
+			Index: 9,
 			Wai:   BaGuaMap[Kun],
 			Nei:   BaGuaMap[Kan],
-			Name:  "地水师",
-			DuYin: "shī",
-			Text:  "《师》：贞丈人吉，无咎。",
-			Short: "坤为地，坎为水，地中有水。地中众者，莫过于水。师为众，部属兵士众多的意思。持正的“仁义之师”，才可攻伐天下使百姓服从，用兵胜负在于择将选帅，持重老成的人统兵可获吉祥，这样才没有灾祸。",
-			Desc:  "《彖》曰：师，众也。贞，正也。能以众正，可以王矣。刚中而应，行险而顺，以此毒天下，而民従之，吉又何咎矣。\n　　《象》曰：地中有水，师。君子以容民畜众。",
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		10: {
+			Index: 10,
+			Wai:   BaGuaMap[Kun],
+			Nei:   BaGuaMap[Kan],
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
 			Yao: [6]Yao{
 				{
 					Image:     YinYao,
