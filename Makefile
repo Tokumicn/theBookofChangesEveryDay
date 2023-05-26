@@ -142,32 +142,11 @@ govet:
 		echo "正在进行静态检测..."
 		go vet $(VETPACKAGES)
 
-proto:
-		kratos proto server router/app/app.proto
-		kratos proto httpclient  router/app/app.proto -t router/app
-		kratos proto grpcclient  router/app/app.proto -t router/app
-
-		kratos proto server router/activity/activity.proto
-		kratos proto httpclient  router/activity/activity.proto -t router/activity
-		kratos proto grpcclient  router/activity/activity.proto -t router/activity
-
-		kratos proto server router/work/work.api.proto
-		kratos proto httpclient  router/work/work.api.proto -t router/work
-		kratos proto grpcclient  router/work/work.api.proto -t router/work
-
-		kratos proto server admin_api/activity/activity.api.proto
-		kratos proto server router/stusession/stusession.api.proto
-
-# remove json behavior omitempty
-		sed -i "" -e "s/,omitempty//g" router/app/app.pb.go
-		sed -i "" -e "s/,omitempty//g" router/activity/activity.pb.go
-		sed -i "" -e "s/,omitempty//g" router/work/work.api.pb.go
-		sed -i "" -e "s/,omitempty//g" router/stusession/stusession.api.pb.go
-		sed -i "" -e "s/,omitempty//g" router/expert/expert.api.pb.go
-		sed -i "" -e "s/,omitempty//g" router/activity/activity.pb.go
-		sed -i "" -e "s/,omitempty//g" admin_api/content/content.api.pb.go
-		sed -i "" -e "s/,omitempty//g" admin_api/*/*.api.pb.go
 
 # gorm gen code
 gormgen:
-		go run cmd/gorm-gen/main.go
+		go run main.go
+
+
+test:
+	sh coverage.sh
