@@ -37,20 +37,20 @@ var zhiOrderMap = map[string][]int{
 
 // 天地数对应卦
 var ganzhiOrderGuaMap = map[int]string{
-	1:  "坎卦",
-	2:  "坤卦",
-	3:  "震卦",
-	4:  "巽卦",
-	6:  "乾卦",
-	7:  "兑卦",
-	8:  "艮卦",
-	9:  "离卦",
-	51: "艮卦", // 上元 男
-	52: "坤卦", // 上元 女
-	53: "艮卦", // 中元 阳男阴女
-	54: "坤卦", // 中元 阴男阳女
-	55: "离卦", // 下元 男
-	56: "兑卦", // 下元 女
+	1:  "坎",
+	2:  "坤",
+	3:  "震",
+	4:  "巽",
+	6:  "乾",
+	7:  "兑",
+	8:  "艮",
+	9:  "离",
+	51: "艮", // 上元 男
+	52: "坤", // 上元 女
+	53: "艮", // 中元 阳男阴女
+	54: "坤", // 中元 阴男阳女
+	55: "离", // 下元 男
+	56: "兑", // 下元 女
 }
 
 func NewPeiShu(ganzhi Ganzhi, sex bool) PeiShu {
@@ -108,7 +108,7 @@ func calc(total, seed int) int {
 }
 
 // 获取后天卦
-func (ps *PeiShu) GetHouTianGua(tian, di int) string {
+func (ps *PeiShu) GetXianTianGua(tian, di int) string {
 
 	tian, di = ps.GetTianDiShu()
 

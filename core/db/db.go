@@ -3,6 +3,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	"github.com/Tokumicn/theBookofChangesEveryDay/core/Suan"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -19,6 +20,18 @@ func InitDB() error {
 		return err
 	}
 	return err
+}
+
+func InsertGua64(kv Suan.GuaKV) error {
+	sqlStr := `INSERT INTO "gua64" 
+    ("gua", "gua_short_desc") 
+	VALUES ($1, $2);`
+	_, err = db.Exec(sqlStr, kv.Key, kv.Val)
+	if err != nil {
+		return err
+	}
+	fmt.Printf("insert success KV: %+v\n", kv)
+	return nil
 }
 
 func CloseDB() {

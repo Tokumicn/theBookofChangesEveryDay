@@ -31,3 +31,9 @@ func TestTools(t *testing.T) {
 	fmt.Println("LunarToString: " + lu.ToString())
 	fmt.Println("干支: " + c.Ganzhi.ToString())
 }
+
+func TestTimeFormat(t *testing.T) {
+
+	DateOnly := "2006-01-02 00:00:00"
+	t.Log(time.Now().AddDate(0, 6, 0).Format(DateOnly))
+}

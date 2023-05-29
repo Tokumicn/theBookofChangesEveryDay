@@ -2,6 +2,7 @@ package utils
 
 import (
 	"math"
+	"strings"
 )
 
 // YearOrderMod 取模函数, 等价于a % b, 但当结果为0时, 返回b
@@ -57,4 +58,18 @@ func DD(jd float64) (_Y, _M, _D, _h, _m, _s int) {
 	_s = int(F)
 
 	return
+}
+
+// strings.Split增强
+func SplitEnhance(s string, seps []string) map[string][]string {
+
+	res := map[string][]string{} // map[sep]sepSplitArr
+	for _, sep := range seps {
+		tempArr := strings.Split(s, sep)
+		if len(tempArr) > 1 {
+			res[sep] = tempArr
+		}
+	}
+
+	return res
 }
