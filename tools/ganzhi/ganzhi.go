@@ -128,7 +128,7 @@ func (gz *Ganzhi) Equals(b *Ganzhi) bool {
 }
 
 func (gz *Ganzhi) ToString() string {
-	return fmt.Sprintf("%s年 %s月 %s日 %s时",
+	return fmt.Sprintf("[ %s年 %s月 %s日 %s时 ]",
 		gz.YearGanzhiAlias(),
 		gz.MonthGanzhiAlias(),
 		gz.DayGanzhiAlias(),

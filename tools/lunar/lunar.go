@@ -256,9 +256,8 @@ func (lunar *Lunar) ToString() string {
 
 	return fmt.Sprintf("%s [%s年 %s %s]",
 		lunar.t.Format(common.DateTime),
-		lunar.YearAlias(),
-		lunar.MonthAlias(),
-		lunar.DayAlias())
+		lunar.YearAlias(), lunar.MonthAlias(), lunar.DayAlias(),
+	)
 }
 
 // Format 输出格式化日期
