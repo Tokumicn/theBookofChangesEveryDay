@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"fmt"
 	"math"
 	"strings"
 )
@@ -72,4 +73,20 @@ func SplitEnhance(s string, seps []string) map[string][]string {
 	}
 
 	return res
+}
+
+// 求余数  整除时返回被余数
+func MOD(num int, modSeed int) int {
+	res := num % modSeed
+
+	if res == 0 {
+		return modSeed
+	}
+
+	return res
+}
+
+// 以统一格式输出卦
+func FormatGua(shangGua, xiaGua string) string {
+	return fmt.Sprintf("%s - %s", shangGua, xiaGua)
 }

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/Tokumicn/theBookofChangesEveryDay/tools/calendar"
 	"github.com/Tokumicn/theBookofChangesEveryDay/tools/ganzhi"
+	"github.com/Tokumicn/theBookofChangesEveryDay/tools/three_digit"
 	"github.com/Tokumicn/theBookofChangesEveryDay/tools/utils"
 	"io"
 	"os"
@@ -21,6 +22,7 @@ type Suan struct {
 	HouTianGua    string             // 后天卦
 	gua64File2Map map[string]string  // 64卦映射
 	gua64File2Arr []GuaKV            // 64卦顺序映射
+	SanShuGua     string             // 三数定卦
 }
 
 func NewSuan(user User) Suan {
@@ -86,7 +88,7 @@ func init64GuaFile() (map[string]string, []GuaKV) {
 			subIndex := strings.Index(oneLineStr, "（上")
 			subTag := oneLineStr[subIndex+6 : subIndex+15]
 			splits := strings.Split(subTag, "上")
-			key := fmt.Sprintf("%s - %s", splits[0], splits[1])
+			key := utils.FormatGua(splits[0], splits[1])
 			tempGua.Key = key
 			fmt.Println(key)
 
@@ -99,7 +101,7 @@ func init64GuaFile() (map[string]string, []GuaKV) {
 			for _, sep := range seps {
 				tempArr := sepSplitMap[sep]
 				if len(tempArr) == 2 {
-					tempKey := fmt.Sprintf("%s - %s", tempArr[0], tempArr[1])
+					tempKey := utils.FormatGua(tempArr[1], tempArr[0])
 					tempGua.Key = tempKey
 
 					// 解析内容填充到map
@@ -184,4 +186,22 @@ func (s *Suan) transformGua(gua string) string {
 	//	"坤 - 乾": "地天泰（泰卦）应时而变",     //3
 
 	return s.gua64File2Map[gua]
+}
+
+// 三数定卦 三数以此为下卦、上挂、爻序
+func (s *Suan) ThreeDigit(nums []int) {
+
+	if len(nums) < 3 {
+		fmt.Println("三数卦参数不足")
+		return
+	}
+
+	xiaGuaIndex := utils.MOD(nums[0], 8)
+	shangGuaIndex := utils.MOD(nums[1], 8)
+	yaoIndex := utils.MOD(nums[2], 6)
+
+	tempGua := three_digit.TransformGuaByThreeDigit(shangGuaIndex, xiaGuaIndex)
+	guaByThreeDigit := s.transformGua(tempGua)
+
+	s.SanShuGua = fmt.Sprintf("%s  第%d爻 爻辞: TODO", guaByThreeDigit, yaoIndex)
 }

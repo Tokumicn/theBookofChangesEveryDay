@@ -3,6 +3,7 @@ package ganzhi
 import (
 	"fmt"
 	"github.com/Tokumicn/theBookofChangesEveryDay/common"
+	"github.com/Tokumicn/theBookofChangesEveryDay/tools/utils"
 )
 
 type PeiShu struct {
@@ -131,9 +132,9 @@ func (ps *PeiShu) GetXianTianGua(tian, di int) string {
 
 	// 阳男阴女  天数为上卦，阴男阳女  地数为上卦；（阴阳指年干所属阴阳）
 	if ps.Sex && ps.YearGanYinYang || (!ps.Sex && !ps.YearGanYinYang) {
-		return fmt.Sprintf("%s - %s", tianGua, diGua)
+		return utils.FormatGua(tianGua, diGua)
 	} else {
-		return fmt.Sprintf("%s - %s", diGua, tianGua)
+		return utils.FormatGua(diGua, tianGua)
 	}
 }
 
