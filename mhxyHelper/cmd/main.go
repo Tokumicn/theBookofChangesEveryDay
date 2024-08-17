@@ -3,10 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/models"
+	"github.com/sirupsen/logrus"
 	"log"
-	"log/slog"
 	"os"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -17,11 +19,15 @@ const (
 )
 
 var (
-	logger      = slog.New(slog.NewTextHandler(os.Stderr, nil))
+	// logger      = slog.New(slog.NewTextHandler(os.Stderr, nil))
+	logger      = logrus.New()
 	nameDictMap = map[string]struct{}{}
 )
 
 func init() {
+
+	// 设置日志级别为Debug
+	logger.SetLevel(logrus.DebugLevel)
 
 	dir, err := os.Getwd()
 	if err != nil {
@@ -72,7 +78,14 @@ func init() {
 
 func main() {
 	inputArr := scanInputText()
-	tempDict := buildDict(inputArr)
+	tempDict, tempProducts := buildDict(inputArr)
+
+	fmt.Println("============================")
+	for _, v := range tempProducts {
+		fmt.Println(v)
+	}
+	fmt.Println("============================")
+
 	saveDict2Txt(tempDict)
 }
 
@@ -108,7 +121,7 @@ func strTrims(str string) string {
 	// 去两边空格
 	result := strings.TrimSpace(str)
 	// 清理额外字符
-	cutSets := []string{"(", ")", " ", "!", "！", "单价"} // ","
+	cutSets := []string{"(", ")", " ", "!", "！", "单价", "单馆", "。"} // ","
 
 	for _, cut := range cutSets {
 		result = strings.Trim(result, cut)
@@ -131,19 +144,27 @@ func getNumIndex(str string) int {
 }
 
 // 分词按行输出字典数据
-func buildDict(textArr []string) []string {
-	results := []string{}
+func buildDict(textArr []string) ([]string, []models.ProductLog) {
+	dictResults := []string{}
+	pLogResults := []models.ProductLog{}
+
+	tempLog := models.ProductLog{}
 	// 按行处理识别的字符数据
 	for i, _ := range textArr {
+		if len(tempLog.Name) > 0 && tempLog.Value > 0 {
+			pLogResults = append(pLogResults, tempLog)
+			tempLog = models.ProductLog{} // 加入后就可以重置了
+		}
 		curText := textArr[i]
 		// 获取该行文本汇总的数字出现的位置
 		numIndex := getNumIndex(curText)
-		// 没有数据则本行直接保留
+		// 没有数字则本行直接保留
 		if numIndex == -1 {
 			// 清洗数据
 			tempText := strTrims(curText)
 			if len(tempText) > 0 {
-				results = append(results, tempText)
+				dictResults = append(dictResults, tempText)
+				tempLog.Name = tempText // 记录商品名
 			}
 			continue
 		} else {
@@ -151,7 +172,7 @@ func buildDict(textArr []string) []string {
 			str2 := strTrims(curText[numIndex:])
 
 			if len(str1) > 0 {
-				results = append(results, str1)
+				dictResults = append(dictResults, str1)
 			}
 
 			// 价格数字
@@ -159,6 +180,17 @@ func buildDict(textArr []string) []string {
 				index := getNumIndex(str2)
 				if index == 0 {
 					fmt.Println("这是价格：", str2)
+					valueStr, err := replaceAllString(str2)
+					if err != nil {
+						fmt.Println("replaceAllString value string err:", err.Error())
+						continue
+					}
+					valueInt, err := convertStr2Int(valueStr)
+					if err != nil {
+						fmt.Println("convertStr2Int value string to int err:", err.Error())
+						continue
+					}
+					tempLog.Value = valueInt
 					continue
 				}
 			}
@@ -166,11 +198,38 @@ func buildDict(textArr []string) []string {
 	}
 
 	fmt.Println("=============================================")
-	for _, v := range results {
+	for _, v := range dictResults {
 		fmt.Println(v)
 	}
 
-	return results
+	return dictResults, pLogResults
+}
+
+// 替换字符串中的非数字字符
+func replaceAllString(str string) (string, error) {
+	// 创建一个正则表达式对象，匹配所有非数字字符
+	reg, err := regexp.Compile("[^0-9]+")
+	if err != nil {
+		// TODO log
+		fmt.Println("Error compiling regex:", err)
+		return "", err
+	}
+
+	// 使用正则表达式的ReplaceAllString方法替换掉所有非数字字符
+	cleanStr := reg.ReplaceAllString(str, "")
+
+	return cleanStr, nil
+}
+
+// 将字符串转换为Int数字
+func convertStr2Int(str string) (int, error) {
+	num, err := strconv.Atoi(str)
+	if err != nil {
+		// TODO log
+		fmt.Println("String to int conversion failed:", err)
+		return -1, err
+	}
+	return num, nil
 }
 
 // 按行接收输入的多行数据 直到回车结束

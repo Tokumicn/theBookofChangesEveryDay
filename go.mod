@@ -1,13 +1,14 @@
 module github.com/Tokumicn/theBookofChangesEveryDay
 
-go 1.17
+go 1.19
 
 require github.com/jmoiron/sqlx v1.3.5
 
 require (
 	github.com/gin-gonic/gin v1.10.0
-	github.com/go-ego/gse v0.80.2
-	github.com/mattn/go-sqlite3 v1.14.16
+	github.com/mattn/go-sqlite3 v1.14.22
+	github.com/sirupsen/logrus v1.9.3
+	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.11
 )
 
@@ -33,7 +34,6 @@ require (
 	github.com/pelletier/go-toml/v2 v2.2.2 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
-	github.com/vcaesar/cedar v0.20.1 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.23.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
