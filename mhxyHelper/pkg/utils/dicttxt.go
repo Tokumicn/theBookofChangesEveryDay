@@ -86,16 +86,16 @@ func SaveDict2Txt(tempDict []string) {
 }
 
 // BuildDict 分词按行输出字典数据
-func BuildDict(textArr []string) ([]string, []models.ProductLog) {
+func BuildDict(textArr []string) ([]string, []models.StuffLog) {
 	dictResults := []string{}
-	pLogResults := []models.ProductLog{}
+	pLogResults := []models.StuffLog{}
 
-	tempLog := models.ProductLog{}
+	tempLog := models.StuffLog{}
 	// 按行处理识别的字符数据
 	for i, _ := range textArr {
-		if len(tempLog.Name) > 0 && tempLog.Value > 0 {
+		if len(tempLog.Name) > 0 && tempLog.ValMH > 0 {
 			pLogResults = append(pLogResults, tempLog)
-			tempLog = models.ProductLog{} // 加入后就可以重置了
+			tempLog = models.StuffLog{} // 加入后就可以重置了
 		}
 
 		curText := textArr[i]
@@ -130,12 +130,12 @@ func BuildDict(textArr []string) ([]string, []models.ProductLog) {
 						fmt.Println("replaceAllString value string err:", err.Error())
 						continue
 					}
-					valueInt, err := convertStr2Int(valueStr)
+					valueFloat, err := convertStr2Float32(valueStr)
 					if err != nil {
 						fmt.Println("convertStr2Int value string to int err:", err.Error())
 						continue
 					}
-					tempLog.Value = valueInt
+					tempLog.ValMH = valueFloat
 					continue
 				}
 			}
@@ -185,4 +185,14 @@ func convertStr2Int(str string) (int, error) {
 		return -1, err
 	}
 	return num, nil
+}
+
+// 将字符串转换为Float数字
+func convertStr2Float32(str string) (float32, error) {
+	floatValue, err := strconv.ParseFloat(str, 32)
+	if err != nil {
+		logger.Log.Error("convertStr2Int string to int conversion failed:", err)
+		return -1, err
+	}
+	return float32(floatValue), nil
 }

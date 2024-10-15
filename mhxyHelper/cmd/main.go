@@ -11,7 +11,8 @@ import (
 func main() {
 	logger.NewLogger()
 
-	// DictBuildToolV1()
+	// db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
+	// DictBuildToolV1() // 构建字典信息
 }
 
 func DictBuildToolV1() {

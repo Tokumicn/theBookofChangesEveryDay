@@ -118,19 +118,19 @@ func InitDBWithAutoMigrate(needAutoMigrate bool) (*gorm.DB, error) {
 	}
 
 	if needAutoMigrate {
-		err = db.AutoMigrate(User{})
-		if err != nil {
-			log.Fatal(err)
-			return nil, err
-		}
-
-		db.AutoMigrate(models.ProductLog{})
-		if err != nil {
-			log.Fatal(err)
-			return nil, err
-		}
+		//err = db.AutoMigrate(User{})
+		//if err != nil {
+		//	log.Fatal(err)
+		//	return nil, err
+		//}
 
 		db.AutoMigrate(models.Stuff{})
+		if err != nil {
+			log.Fatal(err)
+			return nil, err
+		}
+
+		db.AutoMigrate(models.StuffLog{})
 		if err != nil {
 			log.Fatal(err)
 			return nil, err

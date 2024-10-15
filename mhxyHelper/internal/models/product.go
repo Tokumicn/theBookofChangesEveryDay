@@ -9,11 +9,16 @@ import (
 // 物品信息 无特殊属性的通用物品 如：宝石、兽决、灵饰指南、书铁、珍珠 等
 type Stuff struct {
 	gorm.Model
-	QName string  // 搜索名 一类商品总名称 如：月亮石
-	Name  string  // 实际商品名
-	Order int     // 顺序
-	ValMH float32 // MH W为单位
-	ValRM float32 // RM yuan为单位
+	QName    string  `gorm:"column:q_name"`    // 搜索名 一类商品总名称 如：月亮石
+	Name     string  `gorm:"column:name"`      // 实际商品名
+	Order    int     `gorm:"column:order"`     // 顺序
+	ValMH    float32 `gorm:"column:val_mh"`    // MH W为单位
+	ValRM    float32 `gorm:"column:val_rm"`    // RM yuan为单位
+	RegionID int     `gorm:"column:region_id"` // 所在区 通过 map 翻译即可
+}
+
+type StuffLog struct {
+	Stuff
 }
 
 // 搜索名：月亮石/月亮/月
