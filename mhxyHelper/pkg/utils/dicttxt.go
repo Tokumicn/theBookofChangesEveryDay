@@ -130,7 +130,7 @@ func BuildDict(textArr []string) ([]string, []models.StuffLog) {
 						fmt.Println("replaceAllString value string err:", err.Error())
 						continue
 					}
-					valueFloat, err := convertStr2Float32(valueStr)
+					valueFloat, err := ConvertStr2Float32(valueStr)
 					if err != nil {
 						fmt.Println("convertStr2Int value string to int err:", err.Error())
 						continue
@@ -178,7 +178,7 @@ func replaceAllString(str string) (string, error) {
 }
 
 // 将字符串转换为Int数字
-func convertStr2Int(str string) (int, error) {
+func ConvertStr2Int(str string) (int, error) {
 	num, err := strconv.Atoi(str)
 	if err != nil {
 		logger.Log.Error("convertStr2Int string to int conversion failed:", err)
@@ -188,7 +188,7 @@ func convertStr2Int(str string) (int, error) {
 }
 
 // 将字符串转换为Float数字
-func convertStr2Float32(str string) (float32, error) {
+func ConvertStr2Float32(str string) (float32, error) {
 	floatValue, err := strconv.ParseFloat(str, 32)
 	if err != nil {
 		logger.Log.Error("convertStr2Int string to int conversion failed:", err)

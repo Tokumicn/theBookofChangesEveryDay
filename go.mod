@@ -7,7 +7,6 @@ require github.com/jmoiron/sqlx v1.3.5
 require (
 	github.com/gin-gonic/gin v1.10.0
 	github.com/mattn/go-sqlite3 v1.14.22
-	github.com/sirupsen/logrus v1.9.3
 	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.11
 )
