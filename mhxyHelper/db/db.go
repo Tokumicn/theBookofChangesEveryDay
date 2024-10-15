@@ -64,7 +64,7 @@ func InitDB() (*gorm.DB, error) {
 	sqlDB.Exec("PRAGMA journal_mode=WAL;")
 	sqlDB.SetMaxIdleConns(10)
 	sqlDB.SetMaxOpenConns(100)
-	sqlDB.SetConnMaxLifetime(time.Hour)
+	sqlDB.SetConnMaxLifetime(time.Minute * 30)
 
 	return db, nil
 }
@@ -130,7 +130,7 @@ func InitDBWithAutoMigrate(needAutoMigrate bool) (*gorm.DB, error) {
 			return nil, err
 		}
 
-		db.AutoMigrate(models.ProductValV1{})
+		db.AutoMigrate(models.Stuff{})
 		if err != nil {
 			log.Fatal(err)
 			return nil, err

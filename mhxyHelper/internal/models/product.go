@@ -6,66 +6,36 @@ import (
 	"gorm.io/gorm"
 )
 
-type ProductValV1 struct {
+// 物品信息 无特殊属性的通用物品 如：宝石、兽决、灵饰指南、书铁、珍珠 等
+type Stuff struct {
 	gorm.Model
-	Name   string `gorm:"name"`     // 物品名
-	MaxVal int    `gorm:"max_val"`  // 最高价
-	MinVal int    `gorm:"min_val" ` // 最低价
+	QName string  // 搜索名 一类商品总名称 如：月亮石
+	Name  string  // 实际商品名
+	Order int     // 顺序
+	ValMH float32 // MH W为单位
+	ValRM float32 // RM yuan为单位
 }
 
-type ProductLog struct {
-	gorm.Model
-	Name  string `gorm:"name"`  // 物品名
-	Value int    `gorm:"value"` // 价值(MH币)
-}
-
-// 创建日志
-func (plog *ProductLog) Create(ctx context.Context, db *gorm.DB) (uint, error) {
-	if err := db.
-		WithContext(ctx).
-		Model(ProductLog{}).
-		Create(plog).Error; err != nil {
-		return 0, fmt.Errorf("create product log err: %v", err)
-	}
-	return plog.ID, nil
-}
-
-// 获取列表 目前仅提供通过名称查询
-func (plog *ProductLog) ListByName(ctx context.Context, db *gorm.DB, offset, limit int) (int64, []ProductLog, error) {
-	logs := make([]ProductLog, 0)
-	var total int64
-	db = db.WithContext(ctx).
-		Model(ProductLog{}).
-		Where("name = ?", plog.Name)
-
-	if err := db.Count(&total).Error; err != nil {
-		return -1, nil, fmt.Errorf("get all product logs count err: %v", err)
-	}
-
-	if err := db.
-		WithContext(ctx).
-		Where("name = ?", plog.Name).
-		Offset(offset).
-		Limit(limit).
-		Find(&logs).Error; err != nil {
-		return -1, nil, fmt.Errorf("get all product logs err: %v", err)
-	}
-	return total, logs, nil
-}
+// 搜索名：月亮石/月亮/月
+// 月亮石  1级    8W 4元
+// 元宵   攻击   64W ?元
+// 低兽决 连击  100W  ?元
+// 高兽决 高连击 500W ?元
+// 灵饰指南 100级佩饰 55W ?元
 
 // 创建商品价格信息
-func (pVal *ProductValV1) Create(ctx context.Context, db *gorm.DB) (uint, error) {
+func (pVal *Stuff) Create(ctx context.Context, db *gorm.DB) (uint, error) {
 	if err := db.
 		WithContext(ctx).
-		Model(ProductValV1{}).
+		Model(Stuff{}).
 		Create(pVal).Error; err != nil {
-		return 0, fmt.Errorf("create product value err: %v", err)
+		return 0, fmt.Errorf("create stuff info err: %v", err)
 	}
 	return pVal.ID, nil
 }
 
 // 更新商品信息
-func (pVal *ProductValV1) Update(ctx context.Context, db *gorm.DB) (uint, error) {
+func (pVal *Stuff) Update(ctx context.Context, db *gorm.DB) (uint, error) {
 
 	updateMap := map[string]interface{}{}
 
@@ -73,16 +43,16 @@ func (pVal *ProductValV1) Update(ctx context.Context, db *gorm.DB) (uint, error)
 		updateMap["name"] = pVal.Name
 	}
 
-	if pVal.MinVal > 0 {
-		updateMap["min_val"] = pVal.MinVal
+	if pVal.ValMH > 0 {
+		updateMap["val_mh"] = pVal.ValMH
 	}
 
-	if pVal.MaxVal > 0 {
-		updateMap["max_val"] = pVal.MaxVal
+	if pVal.ValRM > 0 {
+		updateMap["val_rm"] = pVal.ValRM
 	}
 
 	if err := db.WithContext(ctx).
-		Model(ProductValV1{}).
+		Model(Stuff{}).
 		Where("id = ?", pVal.ID).Error; err != nil {
 		return 0, fmt.Errorf("update product value by updates:[%s] err: %v", updateMap, err)
 	}
@@ -90,11 +60,11 @@ func (pVal *ProductValV1) Update(ctx context.Context, db *gorm.DB) (uint, error)
 }
 
 // 获取列表 目前仅提供通过名称查询
-func (pVal *ProductValV1) List(ctx context.Context, db *gorm.DB, offset, limit int) (int64, []ProductValV1, error) {
-	vals := make([]ProductValV1, 0)
+func (pVal *Stuff) List(ctx context.Context, db *gorm.DB, offset, limit int) (int64, []Stuff, error) {
+	vals := make([]Stuff, 0)
 	var total int64
 	db = db.WithContext(ctx).
-		Model(ProductLog{})
+		Model(Stuff{})
 
 	// 名称查询
 	if len(pVal.Name) > 0 {
@@ -118,4 +88,11 @@ func (pVal *ProductValV1) List(ctx context.Context, db *gorm.DB, offset, limit i
 		return -1, nil, fmt.Errorf("get list product value  err: %v", err)
 	}
 	return total, vals, nil
+}
+
+func (pVal *Stuff) CreateStuffLog(ctx context.Context, db *gorm.DB) (uint, error) {
+	if err := db.WithContext(ctx).Table("stuff_log").Create(pVal).Error; err != nil {
+		return 0, fmt.Errorf("create stuff log err: %v", err)
+	}
+	return pVal.ID, nil
 }

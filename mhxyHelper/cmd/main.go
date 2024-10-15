@@ -11,6 +11,10 @@ import (
 func main() {
 	logger.NewLogger()
 
+	// DictBuildToolV1()
+}
+
+func DictBuildToolV1() {
 	// 初始化数据清理字典
 	utils.InitCutSets()
 
