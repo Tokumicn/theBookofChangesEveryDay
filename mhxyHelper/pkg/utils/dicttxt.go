@@ -179,6 +179,11 @@ func replaceAllString(str string) (string, error) {
 
 // 将字符串转换为Int数字
 func ConvertStr2Int(str string) (int, error) {
+
+	if len(str) <= 0 {
+		return 0, nil
+	}
+
 	num, err := strconv.Atoi(str)
 	if err != nil {
 		logger.Log.Error("convertStr2Int string to int conversion failed:", err)
@@ -189,6 +194,11 @@ func ConvertStr2Int(str string) (int, error) {
 
 // 将字符串转换为Float数字
 func ConvertStr2Float32(str string) (float32, error) {
+
+	if len(str) <= 0 {
+		return 0, nil
+	}
+
 	floatValue, err := strconv.ParseFloat(str, 32)
 	if err != nil {
 		logger.Log.Error("convertStr2Int string to int conversion failed:", err)

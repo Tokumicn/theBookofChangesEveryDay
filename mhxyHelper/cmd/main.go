@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/service"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/logger"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/utils"
 	"os"
@@ -13,6 +14,11 @@ func main() {
 
 	// db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
 	// DictBuildToolV1() // 构建字典信息
+
+	err := service.BuildStuffByStr([]string{})
+	if err != nil {
+		fmt.Println("err: ", err.Error())
+	}
 }
 
 func DictBuildToolV1() {

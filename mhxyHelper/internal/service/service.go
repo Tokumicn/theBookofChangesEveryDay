@@ -1,9 +1,11 @@
 package service
 
 import (
+	"bufio"
 	"fmt"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/models"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/utils"
+	"os"
 	"strings"
 )
 
@@ -15,44 +17,70 @@ func BuildDictByStr(dictStr string) {
 func BuildStuffByStr(stuffArr []string) error {
 
 	stuffs := make([]models.Stuff, len(stuffArr))
+
+	// 读取本地文件增加到本次处理商品信息中
+	tempStuffs, err := readCSVFromStuffData()
+	if err != nil {
+		// TODO log
+		fmt.Printf("BuildStuffByStr-readCSVFromStuffData err: %v\n", err)
+		return err
+	}
+	stuffArr = append(stuffArr, tempStuffs...)
+
 	for _, stuf := range stuffArr {
 
+		var (
+			qName  string
+			name   string
+			vMH    float32
+			vRM    float32
+			order  int
+			region int
+		)
+
 		splits := strings.Split(stuf, ",")
-		vMH, err := utils.ConvertStr2Float32(splits[2])
+
+		// 必填字段  没有则报错
+		qName, err = utils.ArrGetWithCheck(splits, 0)
 		if err != nil {
-			// TODO log
-			fmt.Printf("BuildStuffByStr-ConvertStr2Float32 str: %s, err: %v \n",
-				splits[2], err)
 			return err
 		}
 
-		vRM, err := utils.ConvertStr2Float32(splits[3])
+		// 必填字段  没有则报错
+		name, err = utils.ArrGetWithCheck(splits, 1)
 		if err != nil {
-			// TODO log
-			fmt.Printf("BuildStuffByStr-ConvertStr2Float32 str: %s, err: %v \n",
-				splits[3], err)
 			return err
 		}
 
-		order, err := utils.ConvertStr2Int(splits[4])
+		// 非必填字段
+		vMHStr, _ := utils.ArrGetWithCheck(splits, 2)
+		vMH, err = utils.ConvertStr2Float32(vMHStr)
 		if err != nil {
-			// TODO log
-			fmt.Printf("BuildStuffByStr-ConvertStr2Float32 str: %s, err: %v \n",
-				splits[3], err)
 			return err
 		}
 
-		region, err := utils.ConvertStr2Int(splits[5])
+		// 非必填字段
+		vRMStr, _ := utils.ArrGetWithCheck(splits, 3)
+		vRM, err = utils.ConvertStr2Float32(vRMStr)
 		if err != nil {
-			// TODO log
-			fmt.Printf("BuildStuffByStr-ConvertStr2Float32 str: %s, err: %v \n",
-				splits[3], err)
+			return err
+		}
+
+		orderStr, _ := utils.ArrGetWithCheck(splits, 4)
+		order, err = utils.ConvertStr2Int(orderStr)
+		if err != nil {
+			return err
+		}
+
+		regionStr, _ := utils.ArrGetWithCheck(splits, 5)
+		region, err = utils.ConvertStr2Int(regionStr)
+		if err != nil {
 			return err
 		}
 
 		temp := models.Stuff{
-			QName:    splits[0],
-			Name:     splits[1],
+			QName:    qName,
+			Name:     name,
 			ValMH:    vMH,
 			ValRM:    vRM,
 			Order:    order,
@@ -61,7 +89,6 @@ func BuildStuffByStr(stuffArr []string) error {
 
 		temp, err = buildVal(temp)
 		if err != nil {
-			// TODO log
 			fmt.Printf("buildVal [temp: %v] err: %v \n", temp, err)
 			continue
 		}
@@ -101,4 +128,25 @@ func buildVal(s models.Stuff) (models.Stuff, error) {
 	}
 
 	return s, nil
+}
+
+// 从stuff数据文件中读取数据
+func readCSVFromStuffData() ([]string, error) {
+	res := make([]string, 0)
+	f, err := os.Open("/Users/zhangrui/Workspace/goSpace/src/Tokumicn/theBookofChangesEveryDay/mhxyHelper/config/stuff_data.csv")
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	r := bufio.NewReader(f)
+	r.ReadLine() // 丢弃第一行
+	for {
+		line, _, err := r.ReadLine()
+		if err != nil {
+			break
+		}
+		res = append(res, string(line))
+	}
+	return res, nil
 }
