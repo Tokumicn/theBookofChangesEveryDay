@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/db"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/models"
+	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/common"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/utils"
 	"gorm.io/gorm"
 	"os"
@@ -44,9 +45,24 @@ func QueryStuff(inStr string) (int64, []models.Stuff, error) {
 	return qStuff.List(ctx, _db, offset, limit)
 }
 
-// TODO 根据输入字符串构建更为精准的查询条件  数据量不大该过程可以通过map映射完成
+// 根据输入字符串构建更为精准的查询条件  数据量不大该过程可以通过map映射完成
 func buildQuery(inStr string) (models.Stuff, error) {
 	res := models.Stuff{}
+
+	qNameStr, ok := common.QueryQNameMap[inStr]
+	if ok {
+		res.QName = qNameStr
+	}
+
+	nameStr, ok := common.QueryNameMap[inStr]
+	if ok {
+		res.Name = nameStr
+	}
+
+	if len(nameStr) == 0 && len(qNameStr) == 0 {
+		fmt.Printf("[优化内容经常查看] buildQuery [inStr: %s] 出现无法映射的用户输入, 请查看后收录进查询映射表\n", inStr)
+		res.Name = inStr // 都无法命中的尝试用name字段查询
+	}
 
 	return res, nil
 }

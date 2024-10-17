@@ -12,16 +12,18 @@ import (
 func main() {
 	logger.NewLogger()
 
-	// db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
+	// 初始化表结构
+	//db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
 	// DictBuildToolV1() // 构建字典信息
 
-	// 测试根据csv文件构建数据并存储
+	// 写入测试 测试根据csv文件构建数据并存储
 	//err := service.BuildStuffByStr([]string{})
 	//if err != nil {
 	//	fmt.Println("err: ", err.Error())
 	//}
 
-	total, stuffs, err := service.QueryStuff("")
+	// 查询测试
+	total, stuffs, err := service.QueryStuff("月亮石")
 	if err != nil {
 		fmt.Println("err: ", err.Error())
 	}

@@ -30,7 +30,7 @@ type StuffLog struct {
 
 func (pVal Stuff) ExistByQName(ctx context.Context, db *gorm.DB, qName string) (bool, uint, error) {
 
-	stuff, err := pVal.FindByQName(ctx, db)
+	stuff, err := pVal.FindByName(ctx, db)
 	if err == gorm.ErrRecordNotFound {
 		return false, 0, nil
 	}
@@ -45,13 +45,13 @@ func (pVal Stuff) ExistByQName(ctx context.Context, db *gorm.DB, qName string) (
 	return false, 0, nil
 }
 
-// 查询单个物品信息
-func (pVal Stuff) FindByQName(ctx context.Context, db *gorm.DB) (Stuff, error) {
+// 查询单个物品信息  name字段为全表唯一索引
+func (pVal Stuff) FindByName(ctx context.Context, db *gorm.DB) (Stuff, error) {
 	res := Stuff{}
 	if err := db.
 		WithContext(ctx).
 		Model(Stuff{}).
-		Where("q_name = ?", pVal.QName).
+		Where("name = ?", pVal.Name).
 		First(&res).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
 			return Stuff{}, nil
