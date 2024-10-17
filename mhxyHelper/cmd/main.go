@@ -15,10 +15,18 @@ func main() {
 	// db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
 	// DictBuildToolV1() // 构建字典信息
 
-	err := service.BuildStuffByStr([]string{})
+	// 测试根据csv文件构建数据并存储
+	//err := service.BuildStuffByStr([]string{})
+	//if err != nil {
+	//	fmt.Println("err: ", err.Error())
+	//}
+
+	total, stuffs, err := service.QueryStuff("")
 	if err != nil {
 		fmt.Println("err: ", err.Error())
 	}
+	fmt.Println("total: ", total)
+	fmt.Println("stuffs: [", stuffs, "]")
 }
 
 func DictBuildToolV1() {
