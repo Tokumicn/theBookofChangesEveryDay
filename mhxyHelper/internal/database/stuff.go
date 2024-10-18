@@ -1,20 +1,33 @@
-package models
+package database
 
 import (
 	"context"
 	"fmt"
 	"gorm.io/gorm"
+	"time"
 )
+
+type Model struct {
+	ID        uint           `gorm:"primarykey" json:"id"`
+	CreatedAt time.Time      `json:"-"`
+	UpdatedAt time.Time      `json:"-"`
+	DeletedAt gorm.DeletedAt `gorm:"index" json:"-"`
+}
 
 // 物品信息 无特殊属性的通用物品 如：宝石、兽决、灵饰指南、书铁、珍珠 等
 type Stuff struct {
-	gorm.Model
-	QName    string  `gorm:"column:q_name"`    // 搜索名 一类商品总名称 如：月亮石
-	Name     string  `gorm:"column:name"`      // 实际商品名 TODO: name字段添加全表唯一索引
-	Order    int     `gorm:"column:order"`     // 顺序
-	ValMH    float32 `gorm:"column:val_mh"`    // MH W为单位
-	ValRM    float32 `gorm:"column:val_rm"`    // RM yuan为单位
-	RegionID int     `gorm:"column:region_id"` // 所在区 通过 map 翻译即可
+	Model
+	QName    string  `gorm:"column:q_name" json:"qName"`   // 搜索名 一类商品总名称 如：月亮石
+	Name     string  `gorm:"column:name"  json:"name"`     // 实际商品名 TODO: name字段添加全表唯一索引
+	Order    int     `gorm:"column:order"  json:"order"`   // 顺序
+	ValMH    float32 `gorm:"column:val_mh"  json:"mhCoin"` // MH W为单位
+	ValRM    float32 `gorm:"column:val_rm" json:"rmCoin"`  // RM yuan为单位
+	RegionID int     `gorm:"column:region_id" json:"-"`    // 所在区 通过 map 翻译即可
+}
+
+func (st Stuff) ToString() string {
+	return fmt.Sprintf("[qName: %s, name: %s, mhCoin: %.2f, rmCoin: %.2f, order: %d]",
+		st.QName, st.Name, st.ValMH, st.ValRM, st.Order)
 }
 
 type StuffLog struct {
@@ -28,9 +41,9 @@ type StuffLog struct {
 // 高兽决 高连击 500W ?元
 // 灵饰指南 100级佩饰 55W ?元
 
-func (pVal Stuff) ExistByQName(ctx context.Context, db *gorm.DB, qName string) (bool, uint, error) {
+func (pVal Stuff) ExistByQName(ctx context.Context) (bool, uint, error) {
 
-	stuff, err := pVal.FindByName(ctx, db)
+	stuff, err := pVal.FindByName(ctx)
 	if err == gorm.ErrRecordNotFound {
 		return false, 0, nil
 	}
@@ -46,9 +59,9 @@ func (pVal Stuff) ExistByQName(ctx context.Context, db *gorm.DB, qName string) (
 }
 
 // 查询单个物品信息  name字段为全表唯一索引
-func (pVal Stuff) FindByName(ctx context.Context, db *gorm.DB) (Stuff, error) {
+func (pVal Stuff) FindByName(ctx context.Context) (Stuff, error) {
 	res := Stuff{}
-	if err := db.
+	if err := LocalDB().
 		WithContext(ctx).
 		Model(Stuff{}).
 		Where("name = ?", pVal.Name).
@@ -63,8 +76,8 @@ func (pVal Stuff) FindByName(ctx context.Context, db *gorm.DB) (Stuff, error) {
 }
 
 // 创建商品价格信息
-func (pVal Stuff) Create(ctx context.Context, db *gorm.DB) (uint, error) {
-	if err := db.
+func (pVal Stuff) Create(ctx context.Context) (uint, error) {
+	if err := LocalDB().
 		WithContext(ctx).
 		Create(&pVal).Error; err != nil {
 		return 0, fmt.Errorf("create stuff info err: %v", err)
@@ -73,7 +86,7 @@ func (pVal Stuff) Create(ctx context.Context, db *gorm.DB) (uint, error) {
 }
 
 // 更新商品信息
-func (pVal Stuff) Update(ctx context.Context, db *gorm.DB) (uint, error) {
+func (pVal Stuff) Update(ctx context.Context) (uint, error) {
 
 	updateMap := map[string]interface{}{}
 
@@ -85,7 +98,7 @@ func (pVal Stuff) Update(ctx context.Context, db *gorm.DB) (uint, error) {
 		updateMap["val_rm"] = pVal.ValRM
 	}
 
-	if err := db.WithContext(ctx).
+	if err := LocalDB().WithContext(ctx).
 		Model(Stuff{}).
 		Where("id = ?", pVal.ID).
 		Error; err != nil {
@@ -95,32 +108,33 @@ func (pVal Stuff) Update(ctx context.Context, db *gorm.DB) (uint, error) {
 }
 
 // 获取列表 目前仅提供通过名称查询
-func (pVal Stuff) List(ctx context.Context, db *gorm.DB, offset, limit int) (int64, []Stuff, error) {
+func (pVal Stuff) List(ctx context.Context, offset, limit int) (int64, []Stuff, error) {
+	DB := LocalDB()
 	vals := make([]Stuff, 0)
 	var total int64
-	db = db.WithContext(ctx).
+	DB = DB.WithContext(ctx).
 		Model(Stuff{})
 
 	// 组名称查询
 	if len(pVal.QName) > 0 {
-		db = db.Where("q_name = ?", pVal.QName)
+		DB = DB.Where("q_name = ?", pVal.QName)
 	}
 
 	// 唯一名称查询
 	if len(pVal.Name) > 0 {
-		db = db.Where("name = ?", pVal.Name)
+		DB = DB.Where("name = ?", pVal.Name)
 	}
 
 	// id查询
 	if pVal.ID > 0 {
-		db = db.Where("id = ?", pVal.ID)
+		DB = DB.Where("id = ?", pVal.ID)
 	}
 
-	if err := db.Count(&total).Error; err != nil {
+	if err := DB.Count(&total).Error; err != nil {
 		return -1, nil, fmt.Errorf("get list product value count err: %v", err)
 	}
 
-	if err := db.
+	if err := DB.
 		WithContext(ctx).
 		Offset(offset).
 		Limit(limit).
@@ -130,8 +144,8 @@ func (pVal Stuff) List(ctx context.Context, db *gorm.DB, offset, limit int) (int
 	return total, vals, nil
 }
 
-func (pVal Stuff) CreateStuffLog(ctx context.Context, db *gorm.DB) (uint, error) {
-	if err := db.WithContext(ctx).
+func (pVal Stuff) CreateStuffLog(ctx context.Context) (uint, error) {
+	if err := LocalDB().WithContext(ctx).
 		Table("stuff_log").
 		Create(&pVal).
 		Error; err != nil {

@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/database"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/service"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/logger"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/utils"
@@ -12,8 +13,14 @@ import (
 func main() {
 	logger.NewLogger()
 
+	// 初始化数据库连接
+	_, err := database.InitDB()
+	if err != nil {
+		panic(err)
+	}
+
 	// 初始化表结构
-	//db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
+	// db.InitDBWithAutoMigrate(true) // 初始化协助构建表结构
 	// DictBuildToolV1() // 构建字典信息
 
 	// 写入测试 测试根据csv文件构建数据并存储
@@ -23,12 +30,15 @@ func main() {
 	//}
 
 	// 查询测试
-	total, stuffs, err := service.QueryStuff("月亮石")
+	total, stuffs, err := service.QueryStuff("太阳")
 	if err != nil {
 		fmt.Println("err: ", err.Error())
 	}
 	fmt.Println("total: ", total)
-	fmt.Println("stuffs: [", stuffs, "]")
+
+	for _, st := range stuffs {
+		fmt.Println(st.ToString())
+	}
 }
 
 func DictBuildToolV1() {

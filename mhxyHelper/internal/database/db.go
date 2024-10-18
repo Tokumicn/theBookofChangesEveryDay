@@ -1,11 +1,11 @@
-package db
+package database
 
 import (
 	"fmt"
-	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/models"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"log"
+	"os"
 	"time"
 )
 
@@ -37,6 +37,10 @@ import (
 //	log.Println(companys)
 //}
 
+var (
+	_db *gorm.DB
+)
+
 // 定义模型结构体
 type User struct {
 	gorm.Model
@@ -46,7 +50,10 @@ type User struct {
 
 // 初始化数据库连接
 func InitDB() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("mhxyhelper.db"), &gorm.Config{
+	dir, _ := os.Getwd()
+	fmt.Println("[MHXYDB] work dir: ", dir)
+
+	db, err := gorm.Open(sqlite.Open("./mhxyhelper.db"), &gorm.Config{
 		//// 开启 WAL 模式
 		//DSN: "mode=wal",
 		//// 增加最大连接数为 100
@@ -69,7 +76,17 @@ func InitDB() (*gorm.DB, error) {
 	// TODO 开始SQL打印测试用
 	db = db.Debug()
 
-	return db, nil
+	_db = db
+
+	return _db, nil
+}
+
+// 获取数据库连接
+func LocalDB() *gorm.DB {
+	if _db != nil {
+		return _db
+	}
+	panic("database connection is nil")
 }
 
 // 定义批量写入函数
@@ -127,13 +144,13 @@ func InitDBWithAutoMigrate(needAutoMigrate bool) (*gorm.DB, error) {
 		//	return nil, err
 		//}
 
-		db.AutoMigrate(models.Stuff{})
+		db.AutoMigrate(Stuff{})
 		if err != nil {
 			log.Fatal(err)
 			return nil, err
 		}
 
-		db.AutoMigrate(models.StuffLog{})
+		db.AutoMigrate(StuffLog{})
 		if err != nil {
 			log.Fatal(err)
 			return nil, err

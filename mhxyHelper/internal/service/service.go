@@ -4,11 +4,9 @@ import (
 	"bufio"
 	"context"
 	"fmt"
-	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/db"
-	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/models"
+	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/database"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/common"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/utils"
-	"gorm.io/gorm"
 	"os"
 	"strings"
 )
@@ -18,12 +16,11 @@ func BuildDictByStr(dictStr string) {
 }
 
 // 查询商品信息
-func QueryStuff(inStr string) (int64, []models.Stuff, error) {
+func QueryStuff(inStr string) (int64, []database.Stuff, error) {
 	var (
 		ctx    = context.Background()
-		qStuff models.Stuff
+		qStuff database.Stuff
 		err    error
-		_db    *gorm.DB
 		offset int
 		limit  = 50
 	)
@@ -36,18 +33,12 @@ func QueryStuff(inStr string) (int64, []models.Stuff, error) {
 	// TODO log
 	fmt.Printf("QueryStuff-buildQuery qStuff: %+v", qStuff)
 
-	// 初始化数据库连接
-	_db, err = db.InitDB()
-	if err != nil {
-		panic(err)
-	}
-
-	return qStuff.List(ctx, _db, offset, limit)
+	return qStuff.List(ctx, offset, limit)
 }
 
 // 根据输入字符串构建更为精准的查询条件  数据量不大该过程可以通过map映射完成
-func buildQuery(inStr string) (models.Stuff, error) {
-	res := models.Stuff{}
+func buildQuery(inStr string) (database.Stuff, error) {
+	res := database.Stuff{}
 
 	qNameStr, ok := common.QueryQNameMap[inStr]
 	if ok {
@@ -71,7 +62,7 @@ func buildQuery(inStr string) (models.Stuff, error) {
 func BuildStuffByStr(stuffArr []string) error {
 	ctx := context.Background()
 
-	stuffs := make([]models.Stuff, len(stuffArr))
+	stuffs := make([]database.Stuff, len(stuffArr))
 
 	// 读取本地文件增加到本次处理商品信息中
 	tempStuffs, err := readCSVFromStuffData()
@@ -111,16 +102,10 @@ func BuildStuffByStr(stuffArr []string) error {
 }
 
 // 存储Stuff信息，根据Name判断是否已经存放，该段为全库表唯一
-func saveStuffs(ctx context.Context, list []models.Stuff) error {
-
-	// 初始化数据库连接
-	_db, err := db.InitDB()
-	if err != nil {
-		panic(err)
-	}
+func saveStuffs(ctx context.Context, list []database.Stuff) error {
 
 	for _, s := range list {
-		isExist, id, err := s.ExistByQName(ctx, _db, s.Name)
+		isExist, id, err := s.ExistByQName(ctx)
 		if err != nil {
 			// TODO log
 			return err
@@ -128,13 +113,13 @@ func saveStuffs(ctx context.Context, list []models.Stuff) error {
 
 		if isExist { // 更新
 			s.ID = id
-			_, err = s.Update(ctx, _db)
+			_, err = s.Update(ctx)
 			if err != nil {
 				// TODO log
 				return err
 			}
 		} else {
-			_, err = s.Create(ctx, _db)
+			_, err = s.Create(ctx)
 			if err != nil {
 				// TODO log
 				return err
@@ -146,7 +131,7 @@ func saveStuffs(ctx context.Context, list []models.Stuff) error {
 }
 
 // 将字符串转换为对象
-func str2Stuff(stuf string) (models.Stuff, error) {
+func str2Stuff(stuf string) (database.Stuff, error) {
 
 	var (
 		err    error
@@ -156,7 +141,7 @@ func str2Stuff(stuf string) (models.Stuff, error) {
 		vRM    float32
 		order  int
 		region int
-		empty  models.Stuff
+		empty  database.Stuff
 	)
 
 	splits := strings.Split(stuf, ",")
@@ -199,7 +184,7 @@ func str2Stuff(stuf string) (models.Stuff, error) {
 		return empty, err
 	}
 
-	temp := models.Stuff{
+	temp := database.Stuff{
 		QName:    qName,
 		Name:     name,
 		ValMH:    vMH,
@@ -212,7 +197,7 @@ func str2Stuff(stuf string) (models.Stuff, error) {
 }
 
 // 填充对象内容
-func buildStuffVal(s models.Stuff) (models.Stuff, error) {
+func buildStuffVal(s database.Stuff) (database.Stuff, error) {
 
 	if (s.ValMH == 0 && s.ValRM == 0) || (s.ValMH != 0 && s.ValRM != 0) {
 		// log 无需转换

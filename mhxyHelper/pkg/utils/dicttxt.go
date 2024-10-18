@@ -3,7 +3,7 @@ package utils
 import (
 	"bufio"
 	"fmt"
-	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/models"
+	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/internal/database"
 	"github.com/Tokumicn/theBookofChangesEveryDay/mhxyHelper/pkg/logger"
 	"os"
 	"regexp"
@@ -86,16 +86,16 @@ func SaveDict2Txt(tempDict []string) {
 }
 
 // BuildDict 分词按行输出字典数据
-func BuildDict(textArr []string) ([]string, []models.StuffLog) {
+func BuildDict(textArr []string) ([]string, []database.StuffLog) {
 	dictResults := []string{}
-	pLogResults := []models.StuffLog{}
+	pLogResults := []database.StuffLog{}
 
-	tempLog := models.StuffLog{}
+	tempLog := database.StuffLog{}
 	// 按行处理识别的字符数据
 	for i, _ := range textArr {
 		if len(tempLog.Name) > 0 && tempLog.ValMH > 0 {
 			pLogResults = append(pLogResults, tempLog)
-			tempLog = models.StuffLog{} // 加入后就可以重置了
+			tempLog = database.StuffLog{} // 加入后就可以重置了
 		}
 
 		curText := textArr[i]
