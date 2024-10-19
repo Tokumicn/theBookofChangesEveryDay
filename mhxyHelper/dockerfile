@@ -5,7 +5,7 @@ RUN mkdir -p /root
 WORKDIR /root/
 
 # 从构建阶段复制二进制文件
-COPY /bin/mhxy_helper .
+COPY /bin/mhxy_helper_linux .
 # 复制DB
 COPY  mhxyhelper.db .
 COPY  mhxyhelper.db-shm .
@@ -24,4 +24,4 @@ ENV LANG C.UTF-8
 EXPOSE 8080
 
 # 启动应用
-CMD ["./mhxy_helper"]
+CMD ["./mhxy_helper_linux"]
