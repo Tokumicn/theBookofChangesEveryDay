@@ -29,16 +29,35 @@ func main() {
 	//	fmt.Println("err: ", err.Error())
 	//}
 
-	// 查询测试
-	total, stuffs, err := service.QueryStuff("太阳")
-	if err != nil {
-		fmt.Println("err: ", err.Error())
-	}
-	fmt.Println("total: ", total)
+	for {
+		fmt.Print("输入查询关键词: ")
+		var inputStr string
+		_, err = fmt.Scan(&inputStr)
+		if err != nil {
+			panic(err)
+		}
 
-	for _, st := range stuffs {
-		fmt.Println(st.ToString())
+		if inputStr == "q" || inputStr == "quit" || inputStr == "exit" {
+			break
+		}
+
+		// 查询测试
+		total, stuffs, err := service.QueryStuff(inputStr)
+		if err != nil {
+			fmt.Println("err: ", err.Error())
+			return
+		}
+
+		fmt.Println("\n查询结果: ")
+		fmt.Println("=====================================")
+		fmt.Println("total: ", total)
+
+		for _, st := range stuffs {
+			fmt.Println(st.ToString())
+		}
+		fmt.Println("=====================================")
 	}
+
 }
 
 func DictBuildToolV1() {

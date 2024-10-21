@@ -73,8 +73,8 @@ func InitDB() (*gorm.DB, error) {
 	sqlDB.SetMaxOpenConns(100)
 	sqlDB.SetConnMaxLifetime(time.Minute * 30)
 
-	// TODO 开始SQL打印测试用
-	db = db.Debug()
+	// TODO 开启SQL打印测试用
+	// db = db.Debug()
 
 	_db = db
 
@@ -138,23 +138,34 @@ func InitDBWithAutoMigrate(needAutoMigrate bool) (*gorm.DB, error) {
 	}
 
 	if needAutoMigrate {
+		// 用户表
 		//err = db.AutoMigrate(User{})
 		//if err != nil {
 		//	log.Fatal(err)
 		//	return nil, err
 		//}
 
+		// 物品信息表
 		db.AutoMigrate(Stuff{})
 		if err != nil {
 			log.Fatal(err)
 			return nil, err
 		}
 
+		// 物品更新日志
 		db.AutoMigrate(StuffLog{})
 		if err != nil {
 			log.Fatal(err)
 			return nil, err
 		}
+
+		// 用户账单信息表
+		db.AutoMigrate(Account{})
+		if err != nil {
+			log.Fatal(err)
+			return nil, err
+		}
+
 	}
 
 	return db, nil
