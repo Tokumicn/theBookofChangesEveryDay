@@ -29,7 +29,6 @@ Thumbs.db
 *.key
 *.csv
 *.log
-bin/
 
 # Develop tools
 .vscode/
