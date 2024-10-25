@@ -50,3 +50,23 @@ var HouTianIndexMap = map[int]string{
 	8: "艮",
 	9: "离",
 }
+
+const (
+	Yin    int = 0
+	Yang   int = 1
+	GuaLen     = 6
+)
+
+const (
+	Qian = 1 // 乾卦
+	Kun  = 2 // 坤卦
+	Zhen = 3 // 震卦
+	Gen  = 4 // 艮卦
+	Li   = 5 //  离卦
+	Kan  = 6 // 坎卦
+	Dui  = 7 // 兑卦
+	Xun  = 8 // 巽卦
+
+	YangYao = "—"
+	YinYao  = "--"
+)
