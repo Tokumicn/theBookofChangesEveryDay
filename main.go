@@ -760,134 +760,1394 @@ var (
 		},
 		16: {
 			Index: 16,
-			Wai:   BaGuaMap[Kun],
-			Nei:   BaGuaMap[Kan],
-			Name:  "",
-			DuYin: "",
-			Text:  "",
+			Wai:   BaGuaMap[Zhen],
+			Nei:   BaGuaMap[Kun],
+			Name:  "雷地豫",
+			DuYin: "yù",
+			Text:  "利建侯行师。",
 			Short: "",
-			Desc:  "",
+			Desc:  "《彖》曰：豫，刚应而志行，顺以动，豫。豫顺以动，故天地如之，而况建侯行师乎？天地以顺动，故日月不过，而四时不忒。圣人以顺动，则刑罚清而民服，豫之时义大矣哉！\n\n《象》曰：雷出地奋，豫。先王以作乐崇德，殷荐之上帝，以配祖考。",
 			Yao: [6]Yao{
 				{
 					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
-				},
-				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "初六：鸣豫，凶。",
+					ImageText: "《象》曰：初六鸣豫，志穷凶也。",
 				},
 				{
 					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "六二：介于石，不终日，贞吉。",
+					ImageText: "《象》曰：不终日贞吉，以中正也。",
 				},
 				{
 					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "六三：盱豫，悔，迟有悔。 ",
+					ImageText: "《象》曰：盱豫不悔，位不当也。",
 				},
 				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Image:     YinYao,
+					Text:      "九四：由豫，大有得，勿疑。朋盍簪。",
+					ImageText: "《象》曰：由豫大有得，志大行也。",
 				},
 				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Image:     YinYao,
+					Text:      "六五：贞疾，恒不死。",
+					ImageText: "《象》曰：六五贞疾，乘刚也。恒不死，中未亡也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：冥豫，成有渝。无咎。",
+					ImageText: "《象》曰：“冥豫”在上，何可长也？",
 				},
 			},
 		},
 		17: {
 			Index: 17,
-			Wai:   BaGuaMap[Kun],
-			Nei:   BaGuaMap[Kan],
-			Name:  "",
-			DuYin: "",
-			Text:  "",
+			Wai:   BaGuaMap[Dui],  // 兑为泽
+			Nei:   BaGuaMap[Zhen], // 震为雷
+			Name:  "泽雷随",
+			DuYin: "suí",
+			Text:  "元亨，利贞，无咎。",
 			Short: "",
-			Desc:  "",
+			Desc:  "《彖》曰：随，刚来而下柔，动而说，随。大亨贞无咎，而天下随时，随时之义大矣哉！\n\n《象》曰：泽中有雷，随。君子以向晦入宴息。",
 			Yao: [6]Yao{
 				{
-					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
-				},
-				{
 					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "初九：官有渝，贞吉，出门交有功。",
+					ImageText: "《象》曰：官有渝，从正吉也。出门交有功，不失也。",
 				},
 				{
 					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "六二：系小子，失丈夫。",
+					ImageText: "《象》曰：系小子，弗兼与也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：系丈夫，失小子，随有求，得。利居贞。",
+					ImageText: "《象》曰：系丈夫，志舍下也。",
 				},
 				{
 					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "九四：随有获，贞凶。有孚在道，以明，何咎？",
+					ImageText: "《象》曰：随有获，其义凶也。有孚在道，明功也。",
 				},
 				{
 					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "九五：孚于嘉，吉。",
+					ImageText: "《象》曰：孚于嘉吉，位正中也。",
 				},
 				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Image:     YinYao,
+					Text:      "上六：拘系之，乃从维之，王用亨于西山。",
+					ImageText: "《象》曰：拘系之，上穷也。",
 				},
 			},
 		},
 		18: {
 			Index: 18,
-			Wai:   BaGuaMap[Kun],
-			Nei:   BaGuaMap[Kan],
-			Name:  "",
-			DuYin: "",
-			Text:  "",
+			Wai:   BaGuaMap[Gen], // 艮为山
+			Nei:   BaGuaMap[Xun], // 巽为风
+			Name:  "山风蛊",
+			DuYin: "gǔ",
+			Text:  "元亨。利涉大川，先甲三日，后甲三日。",
 			Short: "",
-			Desc:  "",
+			Desc:  "《彖》曰：蛊，刚上而柔下，巽而止，蛊。蛊，元亨而天下治也。利涉大川，往有事也。先甲三日，后甲三日，终则有始，天行也。\n\n《象》曰：山下有风，蛊。君子以振民育德。",
 			Yao: [6]Yao{
 				{
 					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "初六：干父之蛊，有子，考无咎。厉，终吉。",
+					ImageText: "《象》曰：干父之蛊，意承考也。",
 				},
 				{
 					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "九二：干母之蛊，不可贞。",
+					ImageText: "《象》曰：干母之蛊，得中道也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：干父之蛊，小有悔，无大咎。",
+					ImageText: "《象》曰：干父之蛊，终无咎也。",
 				},
 				{
 					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "六四：裕父之蛊，往见吝。",
+					ImageText: "《象》曰：裕父之蛊，往未得也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：干父之蛊，用誉。",
+					ImageText: "《象》曰：干父用誉，承以德也。",
 				},
 				{
 					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
-				},
-				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
-				},
-				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
+					Text:      "上九：不事王侯，高尚其事。 ",
+					ImageText: "《象》曰：不事王侯，志可则也。",
 				},
 			},
 		},
 		19: {
 			Index: 19,
-			Wai:   BaGuaMap[Kun],
-			Nei:   BaGuaMap[Kan],
+			Wai:   BaGuaMap[Kun], // 坤为地
+			Nei:   BaGuaMap[Dui], // 兑为泽
+			Name:  "地泽临",
+			DuYin: "",
+			Text:  "元亨，利贞。至于八月有凶。",
+			Short: "",
+			Desc:  "《彖》曰：临，刚浸而长，说而顺，刚中而应。大亨以正，天之道也。至于八月有凶，消不久也。\n\n《象》曰：泽上有地，临。君子以教思无穷，容保民无疆。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：咸临，贞吉。",
+					ImageText: "《象》曰：咸临贞吉，志行正也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：咸临，吉，无不利。",
+					ImageText: "《象》曰：咸临吉无不利，未顺命也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：甘临，无攸利；既忧之，无咎。",
+					ImageText: "《象》曰：甘临，位不当也。既忧之。咎不长也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：至临，无咎。",
+					ImageText: "《象》曰：至临无咎，位当也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：知临，大君之宜，吉。",
+					ImageText: "《象》曰：大君之宜，行中之谓也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：敦临，吉，无咎。",
+					ImageText: "《象》曰：敦临之吉，志在内也。",
+				},
+			},
+		},
+		20: {
+			Index: 20,
+			Wai:   BaGuaMap[Xun], // 巽为风
+			Nei:   BaGuaMap[Kun], // 坤为地
+			Name:  "风地观",
+			DuYin: "",
+			Text:  "盥而不荐。有孚颙若。",
+			Short: "",
+			Desc:  "《彖》曰：大观在上，顺而巽，中正以观天下，观。“盥而不荐，有孚颙若”，下观而化也。观天之神道，而四时不忒，圣人以神道设教，而天下服矣。\n\n《象》曰：风行地上，观。先王以省方观民设教。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：童观，小人无咎，君子吝。",
+					ImageText: "《象》曰：初六童观，小人道也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：窥观，利女贞。",
+					ImageText: "《象》曰：窥观女贞，亦可丑也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：观我生，进退。",
+					ImageText: "《象》曰：观我生进退，未失道也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：观国之光，利用宾于王。",
+					ImageText: "《象》曰：观国之光，尚宾也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：观我生，君子无咎。",
+					ImageText: "《象》曰：观我生，观民也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九，观其生，君子无咎。",
+					ImageText: "《象》曰：观其生，志未平也。",
+				},
+			},
+		},
+		21: {
+			Index: 21,
+			Wai:   BaGuaMap[Li],   // 离为火
+			Nei:   BaGuaMap[Zhen], // 震为雷
+			Name:  "火雷噬嗑",
+			DuYin: "",
+			Text:  "亨。利用狱。",
+			Short: "",
+			Desc:  "《彖》曰：颐中有物曰噬嗑。噬嗑而亨，刚柔分，动而明，雷电合而章。柔得中而上行，虽不当位，利用狱也。\n\n《象》曰：雷电，噬嗑。先王以明罚敕法。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：屦校灭趾，无咎。",
+					ImageText: "《象》曰：屦校灭趾，不行也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：噬肤灭鼻，无咎。",
+					ImageText: "《象》曰：噬肤灭鼻，乘刚也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：噬腊肉遇毒，小吝，无咎。",
+					ImageText: "《象》曰：遇毒，位不当也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：噬干胏，得金矢。利艰贞，吉。",
+					ImageText: "《象》曰：利艰贞吉，未光也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：噬干肉得黄金。贞厉，无咎。",
+					ImageText: "《象》曰：“贞厉无咎”，得当也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：何校灭耳，凶。 ",
+					ImageText: "《象》曰：何校灭耳，聪不明也。",
+				},
+			},
+		},
+		22: {
+			Index: 22,
+			Wai:   BaGuaMap[Gen], // 艮为山
+			Nei:   BaGuaMap[Li],  // 离为火
+			Name:  "山火贲",
+			DuYin: "",
+			Text:  "亨。小利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：贲亨，柔来而文刚，故亨。分，刚上而文柔，故小利有攸往。刚柔交错，天文也。文明以止，人文也。观乎天文，以察时变；观乎人文，以化成天下。\n\n《象》曰：山下有火，贲。君子以明庶政，无敢折狱。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：贲其趾，舍车而徒。",
+					ImageText: "《象》曰：舍车而徒，义弗乘也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：贲其须。",
+					ImageText: "《象》曰：贲其须，与上兴也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：贲如，濡如，永贞吉。",
+					ImageText: "《象》曰：永贞之吉，终莫之陵也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：贲如皤如，白马翰如。匪寇，婚媾。",
+					ImageText: "《象》曰：六四，当位疑也。匪寇婚媾，终无尤也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：贲于丘园，束帛戋戋，吝，终吉。",
+					ImageText: "《象》曰：六五之吉，有喜也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：白贲，无咎。",
+					ImageText: "《象》曰：白贲无咎，上得志也。",
+				},
+			},
+		},
+		23: {
+			Index: 23,
+			Wai:   BaGuaMap[Gen], // 艮为山
+			Nei:   BaGuaMap[Kun], // 坤为地
+			Name:  "山地剥",
+			DuYin: "",
+			Text:  "不利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：剥，剥也。柔变刚也。不利有攸往，小人长也。顺而止之，观象也。君子尚消息盈虚，天行也。\n\n《象》曰：出附于地，剥。上以厚下安宅。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：剥床以足，蔑贞凶。",
+					ImageText: "《象》曰：剥床以足，以灭下也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：剥床以辨，蔑贞凶。",
+					ImageText: "《象》曰：剥床以辨，未有与也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：剥之，无咎。",
+					ImageText: "《象》曰：剥之无咎，失上下也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：剥床以肤，凶。",
+					ImageText: "《象》曰：“剥床以肤”，切近灾也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：贯鱼以宫人宠，无不利。",
+					ImageText: "《象》曰：“以宫人宠”，终无尤也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：硕果不食，君子得舆，小人剥庐。",
+					ImageText: "《象》曰：君子得舆，民所载也。小人剥庐，终不可用也",
+				},
+			},
+		},
+		24: {
+			Index: 24,
+			Wai:   BaGuaMap[Kun],  // 坤为地
+			Nei:   BaGuaMap[Zhen], // 震为雷
+			Name:  "地雷复",
+			DuYin: "",
+			Text:  "亨。出入无疾。朋来无咎。反复其道，七日来复，利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：复，亨。刚反，动而以顺行。是以出入无疾，朋来无咎。反复其道，七日来复，天行也。利有攸往，刚长也。复，其见天地之心乎。\n\n《象》曰：雷在地中，复。先王以至日闭关，商旅不行，后不省方。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：不远复，无祗悔，元吉。",
+					ImageText: "《象》曰：不远之复，以修身也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：休复，吉。",
+					ImageText: "《象》曰：休复之吉，以下仁也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：频复，厉，无咎。",
+					ImageText: "《象》曰：频复之厉，义无咎也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：中行独复。",
+					ImageText: "《象》曰：中行独复，以从道也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：敦复，无悔。",
+					ImageText: "《象》曰：敦复无悔，中以自考也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：迷复，凶，有灾眚。用行师，终有大败，以其国君凶，至于十年不克征。",
+					ImageText: "《象》曰：迷复之凶，反君道也。",
+				},
+			},
+		},
+		25: {
+			Index: 25,
+			Wai:   BaGuaMap[Qian], // 乾为天
+			Nei:   BaGuaMap[Zhen], // 震为雷
+			Name:  "天雷无妄",
+			DuYin: "",
+			Text:  "元亨，利贞。其匪正有眚，不利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：无妄，刚自外来而为主于内，动而健，刚中而应。大亨以正，天之命也。“其匪正有眚，不利有攸往”，无妄之往何之矣？天命不祐，行矣哉！\n\n《象》曰：天下雷行，物与无妄。先王以茂对时育万物。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：无妄往，吉。",
+					ImageText: "《象》曰：无妄之往，得志也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：不耕获，不菑畬，则利用攸往。",
+					ImageText: "《象》曰：不耕获，未富也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：无妄之灾，或系之牛，行人之得，邑人之灾。",
+					ImageText: "《象》曰：行人得牛，邑人灾也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：可贞。无咎。",
+					ImageText: "《象》曰：可贞无咎，固有之也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：无妄之疾，勿药有喜。",
+					ImageText: "《象》曰：无妄之药，不可试也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：无妄行，有眚，无攸利。",
+					ImageText: "《象》曰：无妄之行，穷之灾也。",
+				},
+			},
+		},
+		26: {
+			Index: 26,
+			Wai:   BaGuaMap[Gen],  // 艮为山
+			Nei:   BaGuaMap[Qian], // 乾为天
+			Name:  "山天大畜",
+			DuYin: "",
+			Text:  "利贞。不家食吉。利涉大川。",
+			Short: "",
+			Desc:  "《彖》曰：大畜，刚健笃实，辉光日新。其德刚上而尚贤，能止健，大正也。不家食吉，养贤也。利涉大川，应乎天也。\n\n《象》曰：天在山中，大畜。君子以多识前言往行，以畜其德。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：有厉，利已。",
+					ImageText: "《象》曰：有厉利已，不犯灾也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：舆说輹。",
+					ImageText: "《象》曰：舆说輹，中无尤也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：良马逐，利艰贞，曰闲舆卫，利有攸往。",
+					ImageText: "《象》曰：利有攸往，上合志也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：童牛之牿，元吉。",
+					ImageText: "《象》曰：六四元吉，有喜也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：豮豕之牙，吉。",
+					ImageText: "《象》曰：六五之吉，有庆也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：何天之衢，亨。",
+					ImageText: "《象》曰：何天之衢，道大行也。",
+				},
+			},
+		},
+		27: {
+			Index: 27,
+			Wai:   BaGuaMap[Gen],  // 艮为山
+			Nei:   BaGuaMap[Zhen], // 震为雷
+			Name:  "山雷颐",
+			DuYin: "",
+			Text:  "贞吉。观颐，自求口实。",
+			Short: "",
+			Desc:  "《彖》曰：颐，贞吉，养正则吉也。观颐，观其所养也。自求口实，观其自养也。天地养万物，圣人养贤以及万民，颐之时大矣哉！\n\n《象》曰：山下有雷，颐。君子以慎言语，节饮食。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：舍尔灵龟，观我朵颐，凶。",
+					ImageText: "《象》曰：观我朵颐，亦不足贵也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：颠颐拂经于丘颐，征凶。",
+					ImageText: "《象》曰：六二征凶，行失类也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三，拂颐，贞凶，十年勿用，无攸利。",
+					ImageText: "《象》曰：十年勿用，道大悖也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：颠颐，吉。虎视眈眈，其欲逐逐，无咎。",
+					ImageText: "《象》曰：颠颐之吉，上施光也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：拂经，居贞吉，不可涉大川。",
+					ImageText: "《象》曰：居贞之吉，顺以从上也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：由颐，厉，吉。利涉大川。",
+					ImageText: "《象》曰：由颐厉吉，大有庆也。",
+				},
+			},
+		},
+		28: {
+			Index: 28,
+			Wai:   BaGuaMap[Li],   // 兑为泽
+			Nei:   BaGuaMap[Zhen], // 巽为风
+			Name:  "泽风大过",
+			DuYin: "",
+			Text:  "栋挠，利有攸往，亨。",
+			Short: "",
+			Desc:  "《彖》曰：大过，大者过也。栋挠，本末弱也。刚过而中，巽而说，行。利有攸往，乃亨。大过之时大矣哉！\n\n《象》曰：泽灭木，大过。君子以独立不惧，遯世无闷。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：藉用白茅，无咎。",
+					ImageText: "《象》曰：藉用白茅，柔在下也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：枯杨生稊，老夫得其女妻，无不利。",
+					ImageText: "《象》曰：老夫女妻，过以相与也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：栋桡，凶。",
+					ImageText: "《象》曰：栋桡之凶，不可以有辅也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：栋隆，吉。有它，吝。",
+					ImageText: "《象》曰：栋隆之吉，不桡乎下也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：枯杨生华，老妇得其士夫，无咎无誉。",
+					ImageText: "《象》曰：枯杨生华，何可久也。老妇士夫，亦可丑也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：过涉灭顶，凶。无咎。",
+					ImageText: "《象》曰：过涉之凶，不可咎也。",
+				},
+			},
+		},
+		29: {
+			Index: 29,
+			Wai:   BaGuaMap[Kan], // 坎为水
+			Nei:   BaGuaMap[Kan], // 坎为水
+			Name:  "坎为水",
+			DuYin: "",
+			Text:  "有孚维心，亨。行有尚。",
+			Short: "",
+			Desc:  "《彖》曰：习坎，重险也。水流而不盈。行险而不失其信。维心亨，乃以刚中也。行有尚，往有功也。天险，不可升也。地险，山川丘陵也。王公设险以守其国。险之时用大矣哉！\n\n《象》曰：水洊至，习坎。君子以常德行，习教事。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：习坎，入于坎，窞，凶。",
+					ImageText: "《象》曰：习坎入坎，失道，凶也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：坎有险，求小得。",
+					ImageText: "《象》曰：求小得，未出中也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：来之坎，坎险且枕，入于坎，窞，勿用。",
+					ImageText: "《象》曰：来之坎坎，终无功也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四，樽酒簋贰用缶，纳约自牖，终无咎。",
+					ImageText: "《象》曰：樽酒簋贰，刚柔际也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：坎不盈，祗既平，无咎。",
+					ImageText: "《象》曰：坎不盈，中未大也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：系用徽纆，窴于丛棘，三岁不得，凶。",
+					ImageText: "《象》曰：上六失道，凶三岁也。",
+				},
+			},
+		},
+		30: {
+			Index: 30,
+			Wai:   BaGuaMap[Li], // 离为火
+			Nei:   BaGuaMap[Li], // 离为火
+			Name:  "离为火",
+			DuYin: "",
+			Text:  "利贞。亨。畜牝牛吉。",
+			Short: "",
+			Desc:  "《彖》曰：离，丽也。日月丽乎天，百谷草木丽乎土。重明以丽乎正，乃化成天下。柔丽乎中正，故亨，是以畜牝牛吉也。\n\n《象》曰：明两作，离。大人以继明照于四方。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：履错然，敬之无咎。",
+					ImageText: "《象》曰：履错之敬，以辟咎也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：黄离，元吉。",
+					ImageText: "《象》曰：黄离元吉，得中道也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：日昃之离，不鼓缶而歌，则大耋之嗟，凶。",
+					ImageText: "《象》曰：日昃之离，何可久也？",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：突如，其来如，焚如，死如，弃如。 ",
+					ImageText: "《象》曰：突如其来如，无所容也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：出涕沱若，戚嗟若，吉。",
+					ImageText: "《象》曰：六五之吉，离王公也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：王用出征，有嘉折首，获匪其丑，无咎。",
+					ImageText: "《象》曰：王用出征，以正邦也。",
+				},
+			},
+		},
+		31: {
+			Index: 31,
+			Wai:   BaGuaMap[Zhen], // 兑为泽
+			Nei:   BaGuaMap[Xun],  // 艮为山
+			Name:  "泽山咸",
+			DuYin: "",
+			Text:  "亨。利贞。取女吉。",
+			Short: "",
+			Desc:  "《彖》曰：咸，感也。柔上而刚下，二气感应以相与。止而说，男下女，是以亨利贞、取女吉也。天地感而万物化生，圣人感人心而天下和平。观其所感，而天地万物之情可见矣。\n\n《象》曰：山上有泽，咸。君子以虚受人。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：咸其拇。",
+					ImageText: "《象》曰：咸其拇，志在外也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：咸其腓，凶。居吉。",
+					ImageText: "《象》曰：虽凶居吉，顺不害也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：咸其股，执其随，往吝。",
+					ImageText: "《象》曰：咸其股，亦不处也。志在随人，所执下也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：贞吉。悔亡。憧憧往来，朋从尔思。",
+					ImageText: "《象》曰：贞吉悔亡，未感害也。憧憧往来，未光大也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：咸其脢，无悔。",
+					ImageText: "《象》曰：咸其脢，志末也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：咸其辅颊舌。",
+					ImageText: "《象》曰：咸其辅颊舌，滕口说也。",
+				},
+			},
+		},
+		32: {
+			Index: 32,
+			Wai:   BaGuaMap[Zhen], // 震为雷
+			Nei:   BaGuaMap[Xun],  // 巽为风
+			Name:  "雷风恒",
+			DuYin: "",
+			Text:  "亨。无咎。利贞。利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：恒，久也。刚上而柔下。雷风相与，巽而动，刚柔皆应，恒。恒亨无咎利贞，久于其道也。天地之道恒久而不已也。利有攸往，终则有始也。日月得天而能久照，四时变化而能久成。圣人久于其道而天下化成。观其所恒，而天地万物之情可见矣。\n\n《象》曰：雷风，恒。君子以立不易方。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：浚恒，贞凶，无攸利。",
+					ImageText: "《象》曰：浚恒之凶，始求深也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：悔亡。",
+					ImageText: "《象》曰：九二悔亡，能久中也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：不恒其德，或承之羞，贞吝。",
+					ImageText: "《象》曰：不恒其德，无所容也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：田无禽。",
+					ImageText: "《象》曰：久非其位，安得禽也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：恒其德，贞，妇人吉，夫子凶。",
+					ImageText: "《象》曰：妇人贞吉，从一而终也。夫子制义，从妇凶也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上六：振恒，凶。",
+					ImageText: "《象》曰：振恒在上，大无功也。",
+				},
+			},
+		},
+		33: {
+			Index: 33,
+			Wai:   BaGuaMap[Qian], // 乾为天
+			Nei:   BaGuaMap[Gen],  // 艮为山
+			Name:  "天山遯",
+			DuYin: "dùn",
+			Text:  "亨。小利贞。",
+			Short: "",
+			Desc:  "《彖》曰：遯亨，遯而亨也。刚当位而应，与时行也。小利贞，浸而长也。遯之时义大矣哉！\n\n《象》曰：天下有山，遯。君子以远小人，不恶而严。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：遯尾，厉，勿用有攸往。",
+					ImageText: "《象》曰：遯尾之厉，不往何灾也？",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：执之用黄牛之革，莫之胜说。",
+					ImageText: "《象》曰：执用黄牛，固志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：系遯，有疾厉，畜臣妾吉。",
+					ImageText: "《象》曰：系遯之厉，有疾惫也。畜臣妾吉，不可大事也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：好遯，君子吉，小人否。",
+					ImageText: "《象》曰：君子好遯，小人否也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：嘉遯，贞吉。",
+					ImageText: "《象》曰：嘉遯贞吉，以正志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：肥遯，无不利。",
+					ImageText: "《象》曰：肥遯无不利，无所疑也。",
+				},
+			},
+		},
+		34: {
+			Index: 34,
+			Wai:   BaGuaMap[Zhen], // 震为雷
+			Nei:   BaGuaMap[Qian], // 乾为天
+			Name:  "雷天大壮",
+			DuYin: "",
+			Text:  "利贞。",
+			Short: "",
+			Desc:  "《彖》曰：大壮，大者壮也。刚以动，故壮。大壮利贞，大者正也。正大，而天地之情可见矣。\n\n《象》曰：雷在天上，大壮。君子以非礼弗履。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：壮于趾，征凶，有孚。",
+					ImageText: "《象》曰：壮于趾，其孚穷也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：贞吉。",
+					ImageText: "《象》曰：九二“贞吉”，以中也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：小人用壮，君子用罔，贞厉。羝羊触藩，羸其角。",
+					ImageText: "《象》曰：小人用壮，君子以罔也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：贞吉，悔亡。藩决不羸，壮于大舆之輹。",
+					ImageText: "《象》曰：藩决不羸，尚往也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：丧羊于易，无悔。",
+					ImageText: "《象》曰：丧羊于易，位不当也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：羝羊触藩，不能退，不能遂，无攸利，艰则吉。",
+					ImageText: "《象》曰：不能退，不能遂，不详也。艰则吉，咎不长也。",
+				},
+			},
+		},
+		35: {
+			Index: 35,
+			Wai:   BaGuaMap[Li],   // 离为火
+			Nei:   BaGuaMap[Zhen], // 坤为地
+			Name:  "火地晋",
+			DuYin: "",
+			Text:  "康侯用锡马蕃庶，昼日三接。",
+			Short: "",
+			Desc:  "《彖》曰：晋，进也，明出地上。顺而丽乎大明，柔进而上行，是以康侯用锡马蕃庶，昼日三接也。\n\n《象》曰：明出地上，晋。君子以自昭明德。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：晋如摧如，贞吉。罔孚，裕无咎。",
+					ImageText: "《象》曰：晋如摧如，独行正也。裕无咎。未受命也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：晋如，愁如，贞吉。受兹介福于，其王母。",
+					ImageText: "《象》曰：受兹介福，以中正也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：众允，悔亡。",
+					ImageText: "《象》曰：众允之志，上行也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：晋如鼫鼠，贞厉。",
+					ImageText: "《象》曰：鼫鼠贞厉，位不当也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：悔亡，失得，勿恤。往吉，无不利。",
+					ImageText: "《象》》曰：失得勿恤，往有庆也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：晋其角，维用伐邑，厉吉，无咎，贞吝。",
+					ImageText: "《象》曰：维用伐邑，道未光也。",
+				},
+			},
+		},
+		36: {
+			Index: 36,
+			Wai:   BaGuaMap[Kun], // 坤为地
+			Nei:   BaGuaMap[Li],  // 离为火
+			Name:  "地火明夷",
+			DuYin: "",
+			Text:  "利艰贞。",
+			Short: "",
+			Desc:  "《彖》曰：明入地中，“明夷”。内文明而外柔顺，以蒙大难，文王以之。利艰贞，晦其明也，内难而能正其志，箕子以之。\n\n《象》曰：明入地中，明夷。君子以莅众用晦而明。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：明夷，于飞垂其翼。君子于行，三日不食。有攸往，主人有言。",
+					ImageText: "《象》曰：君子于行，义不食也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：明夷夷于左股，用拯马壮，吉。",
+					ImageText: "《象》曰：六二之吉，顺以则也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：明夷于南狩，得其大首，不可疾贞。",
+					ImageText: "《象》曰：南狩之志，乃得大也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：入于左腹，获明夷之心，于出门庭。",
+					ImageText: "《象》曰：入于左腹，获心意也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：箕子之明夷，利贞。",
+					ImageText: "《象》曰：箕子之贞，明不可息也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上六：不明，晦，初登于天，后入于地。",
+					ImageText: "《象》曰：初登于天，照四国也。后入天地，失则也。",
+				},
+			},
+		},
+		37: {
+			Index: 37,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "风火家人",
+			DuYin: "",
+			Text:  "利女贞。",
+			Short: "",
+			Desc:  "《彖》曰：家人，女正位乎内，男正位乎外。男女正，天地之大义也。家人有严君焉，父母之谓也。父父，子子，兄兄，弟弟，夫夫，妇妇，而家道正。正家而天下定矣。\n\n《象》曰：风自火出，家人。君子以言有物而行有恒。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：闲有家，悔亡。",
+					ImageText: "《象》曰：闲有家，志未变也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：无攸遂，在中馈，贞吉。",
+					ImageText: "《象》曰：六二之吉，顺以巽也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "九三：家人嗃嗃，悔厉吉；妇子嘻嘻，终吝。",
+					ImageText: "《象》曰：家人嗃嗃，未失也。妇子嘻嘻，失家节也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：富家，大吉。",
+					ImageText: "《象》曰：富家大吉，顺在位也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：王假有家，勿恤，吉。",
+					ImageText: "《象》曰：王假有家，交相爱也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九，有孚威如，终吉。",
+					ImageText: "《象》曰：威如之吉，反身之谓也。",
+				},
+			},
+		},
+		38: {
+			Index: 38,
+			Wai:   BaGuaMap[Li],  // 离为火
+			Nei:   BaGuaMap[Dui], // 兑为泽
+			Name:  "火泽睽",
+			DuYin: "",
+			Text:  "小事吉。",
+			Short: "",
+			Desc:  "《彖》曰：睽，火动而上，泽动而下。二女同居，其志不同行。说而丽乎明，柔进而上行，得中而应乎刚，是以小事吉。天地睽而其事同也。男女睽而其志通也。万物睽而其事类也，睽之时用大矣哉！\n\n《象》曰：上火下泽，睽。君子以同而异。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：悔亡。丧马勿逐自复。见恶人无咎。",
+					ImageText: "《象》曰：见恶人，以辟咎也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：遇主于巷，无咎。",
+					ImageText: "《象》曰：遇主于巷，未失道也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：见舆曳，其牛掣，其人天且劓，无初有终。",
+					ImageText: "《象》曰：见舆曳，位不当也。无初有终，遇刚也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：睽孤遇元夫，交孚，厉，无咎。",
+					ImageText: "《象》曰：交孚无咎，志行也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：悔亡。厥宗噬肤，往何咎。",
+					ImageText: "《象》曰：厥宗噬肤，往有庆也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：睽孤见豕负途，载鬼一车，先张之弧，后说之弧，匪寇，婚媾。往遇雨则吉。",
+					ImageText: "《象》曰：遇雨之吉，群疑亡也。",
+				},
+			},
+		},
+		39: {
+			Index: 39,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "水山蹇",
+			DuYin: "jiǎn",
+			Text:  "利西南，不利东北。利见大人。贞吉。",
+			Short: "",
+			Desc:  "《彖》曰：蹇，难也，险在前也。见险而能止，知矣哉！蹇，利西南”，往得中也。不利东北，其道穷也。利见大人，往有功也。当位贞吉”，以正邦也。蹇之时用大矣哉！\n\n《象》曰：山上有水，蹇。君子以反身修德。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：往蹇来誉。",
+					ImageText: "《象》曰：往蹇来誉，宜待也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：王臣蹇蹇，匪躬之故。",
+					ImageText: "《象》曰：王臣蹇蹇，终无尤也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：往蹇来反。 ",
+					ImageText: "《象》曰：往蹇来反，内喜之也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：往蹇来连。",
+					ImageText: "《象》曰：往蹇来连，当位实也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：大蹇朋来。 ",
+					ImageText: "《象》曰：大蹇朋来，以中节也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：往蹇来硕，吉，利见大人。",
+					ImageText: "《象》曰：往蹇来硕，志在内也。利见大人，以从贵也。",
+				},
+			},
+		},
+		40: {
+			Index: 40,
+			Wai:   BaGuaMap[Zhen], // 震为雷
+			Nei:   BaGuaMap[Kan],  // 坎为水
+			Name:  "雷水解",
+			DuYin: "",
+			Text:  "利西南。无所往，其来复吉。有攸往，夙吉。",
+			Short: "",
+			Desc:  "《彖》曰：解，险以动，动而免乎险，解。解，利西南，往得众也。其来复吉，乃得中也。有攸往夙吉，往有功也。天地解而雷雨作，雷雨作而百果草木皆甲坼。解之时大矣哉！\n\n《象》曰：雷雨作，解。君子以赦过宥罪。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：无咎。",
+					ImageText: "《象》曰：刚柔之际，义无咎也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：田获三狐，得黄矢，贞吉。",
+					ImageText: "《象》曰：九二贞吉，得中道也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：负且乘，致寇至，贞吝。",
+					ImageText: "《象》曰：负且乘，亦可丑也。自我致戎，又谁咎也？",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：解而拇，朋至斯孚。",
+					ImageText: "《象》曰：解而拇，未当位也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：君子维有解，吉，有孚于小人。",
+					ImageText: "《象》曰：君子有解，小人退也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：公用射隼于高墉之上，获之，无不利。",
+					ImageText: "《象》曰：公用射隼，以解悖也。",
+				},
+			},
+		},
+		41: {
+			Index: 41,
+			Wai:   BaGuaMap[Gen], // 艮为山
+			Nei:   BaGuaMap[Dui], // 兑为泽
+			Name:  "山泽损",
+			DuYin: "",
+			Text:  "有孚，元吉，无咎。可贞，利有攸往。曷之用，二簋可用享。",
+			Short: "",
+			Desc:  "《彖》曰：损，损下益上，其道上行。损而有孚，元吉，无咎，可贞，利有攸往，曷之用？二簋可用享。二簋应有时。损刚益柔有时，损益盈虚，与时偕行。\n\n《象》曰：山下有泽，损。君子以惩忿窒欲。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：已事遄往，无咎。酌损之。",
+					ImageText: "《象》曰：已事遄往，尚合志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：利贞。征凶，弗损，益之。 ",
+					ImageText: "《象》曰：九二利贞，中以为志也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：三人行则损一人，一人行则得其友。",
+					ImageText: "《象》曰：一人行，三则疑也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：损其疾，使遄有喜，无咎。",
+					ImageText: "《象》曰：损其疾，亦可喜也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：或益之十朋之龟，弗克违，元吉。",
+					ImageText: "《象》曰：六五元吉，自上祐也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：弗损，益之，无咎，贞吉，利有攸往，得臣无家。",
+					ImageText: "《象》曰：弗损，益之，大得志也。",
+				},
+			},
+		},
+		42: {
+			Index: 42,
+			Wai:   BaGuaMap[Xun],  // 巽为风
+			Nei:   BaGuaMap[Zhen], // 震为雷
+			Name:  "风雷益",
+			DuYin: "",
+			Text:  "利有攸往。利涉大川。",
+			Short: "",
+			Desc:  "《彖》曰：益，损上益下，民说无疆。自上下下，其道大光。利有攸往，中正有庆。利涉大川，木道乃行。益动而巽，日进无疆。天施地生，其益无方。凡益之道，与时偕行。\n\n《象》曰：风雷，益。君子以见善则迁，有过则改。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：利用为大作，元吉，无咎。",
+					ImageText: "《象》曰：元吉无咎，下不厚事也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：或益之十朋之龟，弗克违。永贞吉。王用享于帝，吉。",
+					ImageText: "《象》曰：或益之，自外来也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：益之用凶事，无咎。有孚。中行告公用圭。",
+					ImageText: "《象》曰：益用凶事，固有之也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：中行告公，从，利用为依迁国。",
+					ImageText: "《象》曰：告公从，以益志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：有孚惠心，勿问，元吉。有孚，惠我德。",
+					ImageText: "《象》曰：有孚惠心，勿问之矣。惠我德，大得志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：莫益之，或击之，立心勿恒，凶。",
+					ImageText: "《象》曰：莫益之，偏辞也。或击之，自外来也。",
+				},
+			},
+		},
+		43: {
+			Index: 43,
+			Wai:   BaGuaMap[Dui],  // 兑为泽
+			Nei:   BaGuaMap[Qian], // 乾为天
+			Name:  "泽天夬",
+			DuYin: "guài",
+			Text:  "扬于王庭，孚号。有厉，告自邑。不利即戎，利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：夬，决也，刚决柔也。健而说，决而和。扬于王庭，柔乘五刚也。孚号有厉，其危乃光也。告自邑，不利即戎，所尚乃穷也。利有攸往，刚长乃终也。\n\n《象》曰：泽上于天，夬。君子以施禄及下，居德则忌。",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "初九：壮于前趾，往不胜，为咎。",
+					ImageText: "《象》曰：不胜而往，咎也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：惕号，莫夜有戎，勿恤。",
+					ImageText: "《象》曰：有戎勿恤，得中道也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：壮于頄，有凶。君子夬夬独行，遇雨若濡，有愠无咎。",
+					ImageText: "《象》曰：君子夬夬，终无咎也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：臀无肤，其行次且。牵羊悔亡，闻言不信。",
+					ImageText: "《象》曰：其行次且，位不当也。闻言不信，聪不明也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：苋陆夬夬中行，无咎。",
+					ImageText: "《象》曰：中行无咎，中未光也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：无号，终有凶。",
+					ImageText: "《象》曰：无号之凶，终不可长也。",
+				},
+			},
+		},
+		44: {
+			Index: 44,
+			Wai:   BaGuaMap[Qian], // 乾为天
+			Nei:   BaGuaMap[Xun],  // 巽为风
+			Name:  "天风姤",
+			DuYin: "gòu、dù", // 读作姤（gòu或dù），读作姤（gòu）时同“遘”，也指善，美好 [5]。读作姤（dù）时古同“妒”，忌妒；忌恨。
+			Text:  "女壮，勿用取女。",
+			Short: "",
+			Desc:  "《彖》曰：姤，遇也，柔遇刚也。勿用取女，不可与长也。天地相遇，品物咸章也。刚遇中正，天下大行也。姤之时义大矣哉！\n\n《象》曰：天下有风，姤。后以施命诰四方。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：系于金柅，贞吉。有攸往，见凶，羸豕孚蹢躅。",
+					ImageText: "《象》曰：系于金柅，柔道牵也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：包有鱼，无咎，不利宾。",
+					ImageText: "《象》曰：包有鱼，义不及宾也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：臀无肤，其行次且，厉，无大咎。",
+					ImageText: "《象》曰：其行次且，行未牵也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：包无鱼，起凶。",
+					ImageText: "《象》曰：无鱼之凶，远民也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：以杞包瓜，含章，有陨自天。",
+					ImageText: "《象》曰：九五含章，中正也。有陨自天，志不舍命也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上九：姤其角，吝，无咎。",
+					ImageText: "《象》曰：姤其角，上穷吝也。",
+				},
+			},
+		},
+		45: {
+			Index: 45,
+			Wai:   BaGuaMap[Dui], // 兑为泽
+			Nei:   BaGuaMap[Kun], // 坤为地
+			Name:  "泽地萃",
+			DuYin: "cuì",
+			Text:  "亨，王假有庙。利见大人。亨，利贞，用大牲吉。利有攸往。",
+			Short: "",
+			Desc:  "《彖》曰：萃，聚也。顺以说，刚中而应，故聚也。王假有庙，致孝享也。利见大人亨，聚以正也。用大牲吉，利有攸往，顺天命也。观其所聚，而天地万物之情可见矣。\n\n《象》曰：泽上于地，萃。君子以除戎器，戒不虞。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：有孚不终，乃乱乃萃，若号，一握为笑，勿恤，往无咎。",
+					ImageText: "《象》曰：乃乱乃萃，其志乱也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六二：引吉，无咎，孚乃利用禴。",
+					ImageText: "《象》曰：引吉无咎，中未变也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：萃如嗟如，无攸利，往无咎，小吝。",
+					ImageText: "《象》曰：往无咎，上巽也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：大吉无咎。",
+					ImageText: "《象》曰：大吉无咎，位不当也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：萃有位，无咎。匪孚，元永贞，悔亡。",
+					ImageText: "《象》曰：萃有位，志未光也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：赍咨涕洟，无咎。",
+					ImageText: "《象》曰：赍咨涕洟，未安上也。",
+				},
+			},
+		},
+		46: {
+			Index: 46,
+			Wai:   BaGuaMap[Kun], // 坤为地
+			Nei:   BaGuaMap[Xun], // 巽为风
+			Name:  "地风升",
+			DuYin: "",
+			Text:  "元亨。用见大人，勿恤。南征吉。",
+			Short: "",
+			Desc:  "《彖》曰：柔以时升，巽而顺，刚中而应，是以大亨，用见大人勿恤，有庆也。南征吉，志行也。\n\n《象》曰：地中生木，升。君子以顺德，积小以高大。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：允升，大吉。",
+					ImageText: "《象》曰：允升大吉，上合志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：孚乃利用禴，无咎。",
+					ImageText: "《象》曰：九二之孚，有喜也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：升虚邑。",
+					ImageText: "《象》曰：升虚邑，无所疑也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：王用亨于岐山，吉，无咎。",
+					ImageText: "《象》曰：王用亨于岐山，顺事也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六五：贞吉，升阶。",
+					ImageText: "《象》曰：贞吉升阶，大得志也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "上六：冥升，利于不息之贞。",
+					ImageText: "《象》曰：冥升在上，消不富也。",
+				},
+			},
+		},
+		47: {
+			Index: 47,
+			Wai:   BaGuaMap[Dui], // 兑为泽
+			Nei:   BaGuaMap[Kan], // 坎为水
+			Name:  "泽水困",
+			DuYin: "",
+			Text:  "亨。贞大人吉，无咎。有言不信。",
+			Short: "",
+			Desc:  "《彖》曰：困，刚揜也。险以说，因而不失其所，亨，其唯君子乎。贞大人吉，以刚中也。有言不信，尚口乃穷也。\n\n《象》曰：泽无水，困。君子以致命遂志。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：臀困于株木，入于幽谷，三岁不觌。",
+					ImageText: "《象》曰：入于幽谷，幽不明也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：困于酒食，朱绂方来。利用享祀。征凶，无咎。",
+					ImageText: "《象》曰：困于酒食，中有庆也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六三：困于石，据于蒺藜，入于其宫，不见其妻，凶。",
+					ImageText: "《象》曰：据于蒺藜，乘刚也。入于其宫，不见其妻，不祥也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九四：来徐徐，困于金车，吝，有终。",
+					ImageText: "《象》曰：来徐徐，志在下也。虽不当位，有与也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：劓刖，困于赤绂，乃徐有说，利用祭祀。",
+					ImageText: "《象》曰：劓刖，志未得也。乃徐有说，以中直也。利用祭祀，受福也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：困于葛藟，于臲(niè)，曰动悔有悔，征吉。", // 臲，读作niè，同“絅”，禅衣。如：衣锦臲衣
+					ImageText: "《象》曰：困于葛藟，未当也。动悔有悔，吉行也。",
+				},
+			},
+		},
+		48: {
+			Index: 48,
+			Wai:   BaGuaMap[Kan], // 坎为水
+			Nei:   BaGuaMap[Xun], // 巽为风
+			Name:  "水风井",
+			DuYin: "",
+			Text:  "改邑不改井，无丧无得。往来井井。汔至，亦未繘井，羸其瓶，凶。",
+			Short: "",
+			Desc:  "《彖》曰：巽乎水而上水，井。井养而不穷也。改邑不改井，乃以刚中也。汔至亦未繘，井，未有功也。羸其瓶，是以凶也。\n\n《象》曰：木上有水，井。君子以劳民劝相。",
+			Yao: [6]Yao{
+				{
+					Image:     YinYao,
+					Text:      "初六：井泥不食。旧井无禽。",
+					ImageText: "《象》曰：井泥不食，下也。旧井无禽，时舍也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九二：井谷射鲋，瓮敝漏。",
+					ImageText: "《象》曰：井谷射鲋，无与也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九三：井渫不食，为我心恻。可用汲，王明并受其福。",
+					ImageText: "《象》曰：井渫不食，行恻也。求王明，受福也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "六四：井甃，无咎。",
+					ImageText: "《象》曰：井甃无咎，修井也。",
+				},
+				{
+					Image:     YangYao,
+					Text:      "九五：井洌，寒泉食。",
+					ImageText: "《象》曰：寒泉之食，中正也。",
+				},
+				{
+					Image:     YinYao,
+					Text:      "上六：井收勿幕，有孚元吉。",
+					ImageText: "《象》曰：元吉在上，大成也。",
+				},
+			},
+		},
+		49: {
+			Index: 49,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
 			Name:  "",
 			DuYin: "",
 			Text:  "",
@@ -895,6 +2155,16 @@ var (
 			Desc:  "",
 			Yao: [6]Yao{
 				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
 					Image:     YinYao,
 					Text:      "",
 					ImageText: "",
@@ -906,16 +2176,6 @@ var (
 				},
 				{
 					Image:     YinYao,
-					Text:      "",
-					ImageText: "",
-				},
-				{
-					Image:     YangYao,
-					Text:      "",
-					ImageText: "",
-				},
-				{
-					Image:     YangYao,
 					Text:      "",
 					ImageText: "",
 				},
@@ -926,10 +2186,10 @@ var (
 				},
 			},
 		},
-		20: {
-			Index: 20,
-			Wai:   BaGuaMap[Kun],
-			Nei:   BaGuaMap[Kan],
+		50: {
+			Index: 50,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
 			Name:  "",
 			DuYin: "",
 			Text:  "",
@@ -937,6 +2197,16 @@ var (
 			Desc:  "",
 			Yao: [6]Yao{
 				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
 					Image:     YinYao,
 					Text:      "",
 					ImageText: "",
@@ -956,8 +2226,586 @@ var (
 					Text:      "",
 					ImageText: "",
 				},
+			},
+		},
+		51: {
+			Index: 51,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
 				{
 					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		52: {
+			Index: 52,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		53: {
+			Index: 53,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		54: {
+			Index: 54,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		55: {
+			Index: 55,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		56: {
+			Index: 56,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		57: {
+			Index: 57,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		58: {
+			Index: 58,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		59: {
+			Index: 59,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		60: {
+			Index: 60,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		61: {
+			Index: 61,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		62: {
+			Index: 62,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		63: {
+			Index: 63,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+			},
+		},
+		64: {
+			Index: 64,
+			Wai:   BaGuaMap[Li],   //
+			Nei:   BaGuaMap[Zhen], //
+			Name:  "",
+			DuYin: "",
+			Text:  "",
+			Short: "",
+			Desc:  "",
+			Yao: [6]Yao{
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YangYao,
+					Text:      "",
+					ImageText: "",
+				},
+				{
+					Image:     YinYao,
 					Text:      "",
 					ImageText: "",
 				},
