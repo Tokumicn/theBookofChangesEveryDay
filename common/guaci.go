@@ -140,8 +140,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	4: {
 		Index: 4,
-		Wai:   BaGuaMap[Kan],  // 艮为山
-		Nei:   BaGuaMap[Zhen], // 坎为水
+		Wai:   BaGuaMap[Gen], // 艮为山
+		Nei:   BaGuaMap[Kan], // 坎为水
 		Name:  "山水蒙",
 		DuYin: "méng",
 		Text:  "《蒙》：亨。匪我求童蒙，童蒙求我。初筮告，再三渎，渎则不告。利贞。",
@@ -434,7 +434,7 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	11: {
 		Index: 11,
-		Wai:   BaGuaMap[Kan],  // 坤为地
+		Wai:   BaGuaMap[Kun],  // 坤为地
 		Nei:   BaGuaMap[Qian], // 乾为天
 		Name:  "地天泰",
 		DuYin: "tài",
@@ -683,7 +683,7 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 				ImageText: "《象》曰：“冥豫”在上，何可长也？",
 			},
 		},
-	}, // TODO 检查到这里
+	},
 	17: {
 		Index: 17,
 		Wai:   BaGuaMap[Dui],  // 兑为泽
@@ -1148,8 +1148,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	28: {
 		Index: 28,
-		Wai:   BaGuaMap[Li],   // 兑为泽
-		Nei:   BaGuaMap[Zhen], // 巽为风
+		Wai:   BaGuaMap[Dui], // 兑为泽
+		Nei:   BaGuaMap[Xun], // 巽为风
 		Name:  "泽风大过",
 		DuYin: "",
 		Text:  "栋挠，利有攸往，亨。",
@@ -1274,8 +1274,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	31: {
 		Index: 31,
-		Wai:   BaGuaMap[Zhen], // 兑为泽
-		Nei:   BaGuaMap[Xun],  // 艮为山
+		Wai:   BaGuaMap[Dui], // 兑为泽
+		Nei:   BaGuaMap[Gen], // 艮为山
 		Name:  "泽山咸",
 		DuYin: "",
 		Text:  "亨。利贞。取女吉。",
@@ -1350,7 +1350,7 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 				ImageText: "《象》曰：妇人贞吉，从一而终也。夫子制义，从妇凶也。",
 			},
 			{
-				Image:     YangYao,
+				Image:     YinYao,
 				Text:      "上六：振恒，凶。",
 				ImageText: "《象》曰：振恒在上，大无功也。",
 			},
@@ -1442,8 +1442,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	35: {
 		Index: 35,
-		Wai:   BaGuaMap[Li],   // 离为火
-		Nei:   BaGuaMap[Zhen], // 坤为地
+		Wai:   BaGuaMap[Li],  // 离为火
+		Nei:   BaGuaMap[Kun], // 坤为地
 		Name:  "火地晋",
 		DuYin: "",
 		Text:  "康侯用锡马蕃庶，昼日三接。",
@@ -1518,7 +1518,7 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 				ImageText: "《象》曰：箕子之贞，明不可息也。",
 			},
 			{
-				Image:     YangYao,
+				Image:     YinYao,
 				Text:      "上六：不明，晦，初登于天，后入于地。",
 				ImageText: "《象》曰：初登于天，照四国也。后入天地，失则也。",
 			},
@@ -1526,8 +1526,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	37: {
 		Index: 37,
-		Wai:   BaGuaMap[Li],   //
-		Nei:   BaGuaMap[Zhen], //
+		Wai:   BaGuaMap[Xun], // 巽为风
+		Nei:   BaGuaMap[Li],  // 离为火
 		Name:  "风火家人",
 		DuYin: "",
 		Text:  "利女贞。",
@@ -1545,7 +1545,7 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 				ImageText: "《象》曰：六二之吉，顺以巽也。",
 			},
 			{
-				Image:     YinYao,
+				Image:     YangYao,
 				Text:      "九三：家人嗃嗃，悔厉吉；妇子嘻嘻，终吝。",
 				ImageText: "《象》曰：家人嗃嗃，未失也。妇子嘻嘻，失家节也。",
 			},
@@ -1610,8 +1610,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	39: {
 		Index: 39,
-		Wai:   BaGuaMap[Li],   //
-		Nei:   BaGuaMap[Zhen], //
+		Wai:   BaGuaMap[Kan], // 坎为水
+		Nei:   BaGuaMap[Gen], // 艮为山
 		Name:  "水山蹇",
 		DuYin: "jiǎn",
 		Text:  "利西南，不利东北。利见大人。贞吉。",
@@ -2064,7 +2064,7 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 				ImageText: "《象》曰：大人虎变，其文炳也。",
 			},
 			{
-				Image:     YangYao,
+				Image:     YinYao,
 				Text:      "上六：君子豹变，小人革面，征凶，居贞吉。",
 				ImageText: "《象》曰：君子豹变，其文蔚也。小人革面，顺以从君也。",
 			},
@@ -2072,8 +2072,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	50: {
 		Index: 50,
-		Wai:   BaGuaMap[Li],   // 离为火
-		Nei:   BaGuaMap[Zhen], // 巽为风
+		Wai:   BaGuaMap[Li],  // 离为火
+		Nei:   BaGuaMap[Xun], // 巽为风
 		Name:  "火风鼎",
 		DuYin: "",
 		Text:  "元吉，亨。",
@@ -2450,8 +2450,8 @@ var LiuShiSiGuaMap = map[int]GuaImage{
 	},
 	59: {
 		Index: 59,
-		Wai:   BaGuaMap[Li],   // 巽为风
-		Nei:   BaGuaMap[Zhen], // 坎为水
+		Wai:   BaGuaMap[Xun], // 巽为风
+		Nei:   BaGuaMap[Kan], // 坎为水
 		Name:  "风水涣",
 		DuYin: "",
 		Text:  "亨。王假有庙。利涉大川，利贞。",
